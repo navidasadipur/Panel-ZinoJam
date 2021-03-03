@@ -1,37 +1,137 @@
 ﻿@model SpadCompanyPanel.Core.Models.ContactForm
-@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form" }))
-{
-    <form>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "text-light-black fw-600" })
-                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control form-control-submit", placeholder = "نام و نام خانوادگی" } })
-                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form" }))
+    {
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "text-light-black fw-600" })
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control form-control-submit", placeholder = "نام و نام خانوادگی" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "text-light-black fw-600" })
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control form-control-submit", placeholder = "ایمیل" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "text-light-black fw-600" })
+                        @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control form-control-submit", placeholder = "پیام" } })
+                        @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                    </div>
+                    <button type="submit"
+                            class="btn-second btn-submit full-width">
+                        ارسال
+                    </button>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "text-light-black fw-600" })
-                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control form-control-submit", placeholder = "ایمیل" } })
-                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "text-light-black fw-600" })
-                    @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control form-control-submit", placeholder = "پیام" } })
-                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
-                </div>
-                <button type="submit"
-                        class="btn-second btn-submit full-width">
-                    ارسال
-                </button>
+        </form>
+    }*@
+
+<div id="parent-page" class="parent-page">
+
+    <div class="container rtl">
+
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+                <li class="breadcrumb-item active" aria-current="page">تماس با ما</li>
+            </ol>
+        </nav>
+        <h1 class="page-title">تماس با ما</h1>
+        <div class="mapouter" style="margin-bottom:50px ">
+            <div class="gmap_canvas">
+                <iframe width="100%" height="500" id="gmap_canvas"
+                        src="https://maps.google.com/maps?q=Tehran&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                        scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <a href="https://putlocker-is.org"></a><br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 400px;
+                        width: 100%;
+                    }
+                </style>
+                <a href="https://www.embedgooglemap.net"></a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 400px;
+                        width: 100%;
+                    }
+                </style>
             </div>
         </div>
-    </form>
-}
-<script>
-    $.validator.unobtrusive.parse("#form");
-</script>
+
+        <div class="contact-details">
+
+            <div class="row">
+                <div class="col-md-6 col-xs-12">
+                    <div>
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <span class="contact-txt">
+                            ایران ، تهران
+                        </span>
+                    </div>
+                    <div>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <span class="contact-txt">
+                            09152696581
+                            ,
+                            09365487896
+                        </span>
+                    </div>
+                    <div>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope-open"></i>
+                        </div>
+                        <span class="contact-txt">
+                            info@gmail.com
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-xs-12">
+
+                </div>
+                <div class="col-md-12">
+                    <h2 style="color: #c4161c;
+                            margin-bottom: 20px;
+                            font-weight: bold;">
+                        ارسال پیام برای ما
+                    </h2>
+                    <form action="">
+                        <input type="text" placeholder="نام و نام خانوادگی " class="custom-inpt inpt-50">
+                        <input type="text" placeholder="ایمیل خود را وارد کنید" class="custom-inpt inpt-50">
+                        <textarea placeholder="متن مورد نظر را وارد کنید" class="contact-textarea"></textarea>
+                        <input type="submit" value="تایید" class="contact-submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+@*<script>
+        $.validator.unobtrusive.parse("#form");
+    </script>*@
 

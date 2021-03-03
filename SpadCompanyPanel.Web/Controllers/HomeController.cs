@@ -43,6 +43,12 @@ namespace SpadCompanyPanel.Web.Controllers
             ViewBag.Phone = _contentRepo.GetStaticContentDetail((int) StaticContents.Phone).ShortDescription;
             return PartialView();
         }
+
+        public ActionResult Products()
+        {
+            return PartialView();
+        }
+
         public ActionResult HomeSlider()
         {
             var sliderContent = _contentRepo.GetContentByTypeId((int)StaticContentTypes.Slider);
@@ -99,10 +105,8 @@ namespace SpadCompanyPanel.Web.Controllers
             var ourTeam = _ourTeamRepo.GetAll();
             return View(ourTeam);
         }
-        public ActionResult Footer(bool isContactUsPage)
+        public ActionResult Footer()
         {
-            if (isContactUsPage)
-                ViewBag.ContactUsPage = true;
 
             var footerContent = new FooterViewModel();
             footerContent.Map = _contentRepo.Get((int) StaticContents.Map);
@@ -140,7 +144,7 @@ namespace SpadCompanyPanel.Web.Controllers
             var foodGallery = _foodGalleriesRepo.GetAll();
             return View(foodGallery);
         }
-        [Route("AboutUs")]
+        //[Route("AboutUs")]
         public ActionResult About()
         {
             return View();

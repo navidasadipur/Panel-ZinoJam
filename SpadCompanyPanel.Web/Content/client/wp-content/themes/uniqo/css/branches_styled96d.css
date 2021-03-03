@@ -1,0 +1,41 @@
+body,html{
+	padding: 0px;
+	margin: 0px;
+}
+#branches_container{
+    margin-top: 210px;
+    margin-bottom: 210px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    background: white;
+}
+/*table styles*/
+
+.top_container table td , table th{
+    padding:10px 10px;
+}
+.top_container table{
+    border:1px solid #ddd;
+    width: 100%;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.top_container table tr:nth-child(2n+1){
+    background-color:#f9f9f9;
+}
+.top_container table th{
+    background-color:#005f6e ;
+    text-align: center;
+    color:#fff;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.top_container table tr:first-child td , table tr:first-child td{
+    padding:15px 10px;
+
+}
+
+@media (max-width: 500px ) {
+
+}
