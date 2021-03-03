@@ -1,7 +1,79 @@
 ﻿@model List<SpadCompanyPanel.Web.ViewModels.LatestArticlesViewModel>
 @if (Model.Any())
 {
-    <section class="section-padding our-blog restaurent-ad">
+
+    <div class="blog-left-title">
+        پست های اخیر
+    </div>
+    <div class="latest-blog">
+        <div class="d-inline-block">
+            <a href="blog-details.html">
+                <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog1.jpg" class="latest-blog-img" alt="">
+            </a>
+        </div>
+        <div class="latest-blog-title">
+            <a href="blog-details.html">
+                <p>هر آنچه باید درباره ما بدانید</p>
+            </a>
+            <span>
+                4 بهمن 1399
+            </span>
+        </div>
+    </div>
+    <div class="latest-blog">
+        <div class="d-inline-block">
+            <a href="blog-details.html">
+                <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog2.jpg" class="latest-blog-img" alt="">
+            </a>
+        </div>
+        <div class="latest-blog-title">
+            <a href="blog-details.html">
+                <p>هر آنچه باید درباره ما بدانید</p>
+            </a>
+            <span>
+                4 بهمن 1399
+            </span>
+        </div>
+    </div>
+    <div class="latest-blog">
+        <div class="d-inline-block">
+            <a href="blog-details.html">
+                <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog3.jpg" class="latest-blog-img" alt="">
+            </a>
+        </div>
+        <div class="latest-blog-title">
+            <a href="blog-details.html">
+                <p>هر آنچه باید درباره ما بدانید</p>
+            </a>
+            <span>
+                4 بهمن 1399
+            </span>
+        </div>
+    </div>
+    <div class="latest-blog">
+        <div class="d-inline-block">
+            <a href="blog-details.html">
+                <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog4.jpg" class="latest-blog-img" alt="">
+            </a>
+        </div>
+        <div class="latest-blog-title">
+            <a href="blog-details.html">
+                <p>هر آنچه باید درباره ما بدانید</p>
+            </a>
+            <span>
+                4 بهمن 1399
+            </span>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    @*<section class="section-padding our-blog restaurent-ad">
         <div class="container">
             <div class="section-header-style-2">
                 <h6 class="text-light-green sub-title">بلاگ ما</h6>
@@ -33,7 +105,7 @@
                         <!-- article 1 -->
                         <div class="side-blog">
                             <div class="blog-list padding-tb-10">
-                                @for (int i = 1; i < Model.Count-1; i++)
+                                @for (int i = 1; i < Model.Count - 1; i++)
                                 {
                                     if (i < Model.Count)
                                     {
@@ -76,5 +148,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>*@
 }

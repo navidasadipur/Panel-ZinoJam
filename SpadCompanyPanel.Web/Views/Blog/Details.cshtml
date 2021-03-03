@@ -2,7 +2,101 @@
 @{
     ViewBag.Title = Model.Title;
 }
-<section class="our-articles bg-light-theme section-padding pt-0">
+
+    <div id="parent-page" class="parent-page">
+
+        <div class="container rtl">
+
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
+                    <li class="breadcrumb-item"><a href="blog.html">بلاگ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">جزئیات بلاگ</li>
+                </ol>
+            </nav>
+
+
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <div class="blog-details">
+                        <figure class="blog-img">
+                            <a href="blog-details.html">
+                                <img src="~/Content/client/wp-content/themes/uniqo/img/blog.jpg" alt="blog-img" style="width:100%">
+                            </a>
+                        </figure>
+                        <div class="blog-details-body">
+
+                            <h1 class="blog-details-title">هر آنچه باید درباره ما بدانید</h1>
+                            <p class="blog-details-txt">
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                            </p>
+                            <h2 class="blog-details-title">جزئیات بلاگ به صورت لیستی</h2>
+                            <ul>
+                                <li>زینو جم</li>
+                                <li>زینو جم</li>
+                                <li>زینو جم</li>
+                                <li>زینو جم</li>
+                                <li>زینو جم</li>
+                                <li>زینو جم</li>
+                            </ul>
+                            <h1 class="blog-details-title">هر آنچه باید درباره ما بدانید</h1>
+                            <p class="blog-details-txt">
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                            </p>
+                        </div>
+
+                    </div>
+                    
+
+
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <div class="blog-left">
+                        @Html.Action("ArticleCategoriesSection", "Blog")
+                        @Html.Action("LatestArticlesSection", "Blog")
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+@*<section class="our-articles bg-light-theme section-padding pt-0">
     <div class="blog-page-banner"></div>
     <div class="container-fluid">
         <div class="row">
@@ -175,4 +269,4 @@
             $('#ParentId').val("");
         }
     </script>
-}
+}*@
