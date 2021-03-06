@@ -76,17 +76,39 @@ namespace SpadCompanyPanel.Web.Controllers
         }
         public ActionResult ContactUsForm()
         {
-            return PartialView();
+            var contactUsContent = new ContactUsViewModel();
+            contactUsContent.ContactInfo = _contentRepo.Get((int)StaticContents.ContactInfo);
+            contactUsContent.Email = _contentRepo.Get((int)StaticContents.Email);
+            contactUsContent.Address = _contentRepo.Get((int)StaticContents.Address);
+            contactUsContent.Phone = _contentRepo.Get((int)StaticContents.Phone);
+            contactUsContent.Youtube = _contentRepo.Get((int)StaticContents.Youtube);
+            contactUsContent.Instagram = _contentRepo.Get((int)StaticContents.Instagram);
+            contactUsContent.Twitter = _contentRepo.Get((int)StaticContents.Twitter);
+            contactUsContent.Pinterest = _contentRepo.Get((int)StaticContents.Pinterest);
+            contactUsContent.Facebook = _contentRepo.Get((int)StaticContents.Facebook);
+            //return View(contactUsContent);
+
+            return PartialView(contactUsContent);
         }
+
         [HttpPost]
-        public ActionResult ContactUsForm(ContactForm contactForm)
+        [ValidateAntiForgeryToken]
+        public ActionResult ContactUsForm(ContactUsViewModel viewModel)
         {
+            var customerContactForm = new ContactForm()
+            {
+                Name = viewModel.Name,
+                Email = viewModel.CustomerEmail,
+                Message = viewModel.Message
+            };
+
             if (ModelState.IsValid)
             {
-                _contactFormRepo.Add(contactForm);
+                _contactFormRepo.Add(customerContactForm);
                 return RedirectToAction("ContactUsSummary");
             }
-            return View(contactForm);
+
+            return View(viewModel);
         }
 
         public ActionResult ContactUsSummary()
@@ -109,7 +131,6 @@ namespace SpadCompanyPanel.Web.Controllers
         {
 
             var footerContent = new FooterViewModel();
-            footerContent.Map = _contentRepo.Get((int) StaticContents.Map);
             footerContent.Email = _contentRepo.Get((int) StaticContents.Email);
             footerContent.Address = _contentRepo.Get((int) StaticContents.Address);
             footerContent.Phone = _contentRepo.Get((int) StaticContents.Phone);
@@ -147,7 +168,11 @@ namespace SpadCompanyPanel.Web.Controllers
         //[Route("AboutUs")]
         public ActionResult About()
         {
-            return View();
+            var aboutViewModel = new AboutViewModel();
+
+            aboutViewModel.AboutDescription = _contentRepo.GetContentByTypeId((int)StaticContentTypes.CompanyHistory).FirstOrDefault().ShortDescription;
+
+            return PartialView(aboutViewModel);
         }
 
         [Route("ContactUs")]

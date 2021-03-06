@@ -1,7 +1,7 @@
-﻿@model SpadCompanyPanel.Core.Models.ContactForm
+﻿@model SpadCompanyPanel.Web.ViewModels.ContactUsViewModel
 
 @{
-    ViewBag.Title = "";
+    ViewBag.Title = "تماس با ما";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -46,10 +46,10 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                <li class="breadcrumb-item active" aria-current="page">تماس با ما</li>
+                <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
             </ol>
         </nav>
-        <h1 class="page-title">تماس با ما</h1>
+        <h1 class="page-title">@ViewBag.Title</h1>
         <div class="mapouter" style="margin-bottom:50px ">
             <div class="gmap_canvas">
                 <iframe width="100%" height="500" id="gmap_canvas"
@@ -86,6 +86,7 @@
                         </div>
                         <span class="contact-txt">
                             ایران ، تهران
+                            ‌@Model.Address.ShortDescription
                         </span>
                     </div>
                     <div>
@@ -93,9 +94,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <span class="contact-txt">
-                            09152696581
-                            ,
-                            09365487896
+                            @Model.Phone.ShortDescription
                         </span>
                     </div>
                     <div>
@@ -103,7 +102,7 @@
                             <i class="fas fa-envelope-open"></i>
                         </div>
                         <span class="contact-txt">
-                            info@gmail.com
+                            @Model.Email.ShortDescription
                         </span>
                     </div>
                 </div>
@@ -116,12 +115,32 @@
                             font-weight: bold;">
                         ارسال پیام برای ما
                     </h2>
-                    <form action="">
-                        <input type="text" placeholder="نام و نام خانوادگی " class="custom-inpt inpt-50">
-                        <input type="text" placeholder="ایمیل خود را وارد کنید" class="custom-inpt inpt-50">
-                        <textarea placeholder="متن مورد نظر را وارد کنید" class="contact-textarea"></textarea>
+                    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "form" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "custom-inpt inpt-50 form-control form-control-submit", placeholder = "نام و نام خانوادگی" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group">
+                            @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "custom-inpt inpt-50", placeholder = "ایمیل خود را وارد کنید" } })
+                            @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
+                        </div>
+
+                        <div class="form-group">
+                            @Html.TextAreaFor(model => model.Message, new { placeholder = "متن مورد نظر را وارد کنید", rows = "5", @class = "contact-textarea" })
+                            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                        </div>
+                        @*<input type="text" placeholder="نام و نام خانوادگی " class="custom-inpt inpt-50">
+                            <input type="text" placeholder="ایمیل خود را وارد کنید" class="custom-inpt inpt-50">
+                            <textarea placeholder="متن مورد نظر را وارد کنید" class="contact-textarea"></textarea>*@
                         <input type="submit" value="تایید" class="contact-submit">
-                    </form>
+
+                    }
                 </div>
             </div>
         </div>
@@ -129,6 +148,8 @@
 
     </div>
 </div>
+
+
 
 
 @*<script>
