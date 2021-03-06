@@ -42,7 +42,6 @@ namespace SpadCompanyPanel.Web.ViewModels
         [MaxLength(600)]
         [Display(Name = "نام و نام خانوادگی")]
         [Required(AllowEmptyStrings = false,ErrorMessage = "لطفا {0} خود را وارد کنید")]
-        [EmailAddress(ErrorMessage = "{0} وارد شده معتبر نیست")]
         public string Name { get; set; }
         
         [Display(Name = "متن")]

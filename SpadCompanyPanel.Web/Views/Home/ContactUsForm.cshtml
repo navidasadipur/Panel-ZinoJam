@@ -123,11 +123,11 @@
 
 
                         <div class="form-group">
-                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "custom-inpt inpt-50 form-control form-control-submit", placeholder = "نام و نام خانوادگی" } })
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "custom-inpt inpt-50 form-control form-control-submit", placeholder = "نام و نام خانوادگی" ,@type="name"} })
                             @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
-                            @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "custom-inpt inpt-50", placeholder = "ایمیل خود را وارد کنید" } })
+                            @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "custom-inpt inpt-50", placeholder = "ایمیل خود را وارد کنید" ,@type="email"} })
                             @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger" })
                         </div>
 
@@ -152,7 +152,7 @@
 
 
 
-@*<script>
+<script>
         $.validator.unobtrusive.parse("#form");
-    </script>*@
+    </script>
 

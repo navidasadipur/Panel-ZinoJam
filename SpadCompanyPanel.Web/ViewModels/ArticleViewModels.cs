@@ -112,6 +112,7 @@ namespace SpadCompanyPanel.Web.ViewModels
         public string Author { get; set; }
         public string AuthorAvatar { get; set; }
         public string Role { get; set; }
+        public int CommentCounter { get; set; }
     }
 
     public class ArticleCategoriesViewModel

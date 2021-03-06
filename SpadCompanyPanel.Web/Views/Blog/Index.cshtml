@@ -13,18 +13,60 @@
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">بلاگ</li>
+                    <li class="breadcrumb-item"><a href="/home">خانه</a></li>
+
+                    @if (ViewBag.BreadCrumb != null)
+                    {
+                        <li class="breadcrumb-item" aria-current="page">@ViewBag.Title</li>
+                        <li class="breadcrumb-item active" aria-current="page">@ViewBag.BreadCrumb</li>
+                    }
+                    else
+                    {    
+                        <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
+                    }
+
                 </ol>
             </nav>
 
-
             <div class="row">
                 <div class="col-md-8 col-xs-12">
-                    <div class="blog-post">
+
+                    @foreach (var item in Model)
+                    {
+                        <div class="blog-post">
+                            <figure class="blog-img">
+                                <a href="/">
+                                    <img src="~/Content/client/wp-content/themes/uniqo/img/blog3.jpg" alt="blog-img" style="width:100%">
+                                </a>
+                            </figure>
+                            <div class="blog-body">
+                                <p class="blog-date">
+                                    <span>
+                                        @item.PersianDate
+                                    </span>
+                                    |
+                                    <span>
+                                        نظرات @item.CommentCounter
+                                    </span>
+                                </p>
+                                <h2 class="blog-title">
+                                    <a href="/details">
+                                        @item.Title
+                                    </a>
+                                </h2>
+                                <p class="margin-top-17">
+                                    @item.ShortDescription
+                                </p>
+                            </div>
+                        </div>
+                    }
+
+
+
+                    @*<div class="blog-post">
 
                         <figure class="blog-img">
-                            <a href="blog-details.html">
+                            <a href="/">
                                 <img src="~/Content/client/wp-content/themes/uniqo/img/blog3.jpg" alt="blog-img" style="width:100%">
                             </a>
                         </figure>
@@ -101,7 +143,7 @@
                             </p>
                         </div>
 
-                    </div>
+                    </div>*@
 
 
                 </div>
