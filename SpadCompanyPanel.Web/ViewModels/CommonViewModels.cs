@@ -24,6 +24,7 @@ namespace SpadCompanyPanel.Web.ViewModels
         public StaticContentDetail Pinterest { get; set; }
         public StaticContentDetail SiteTitle { get; set; }
         public StaticContentDetail ShortDescription { get; set; }
+        public StaticContentDetail SupportPhone { get; set; }
     }
     public class ContactUsViewModel
     {

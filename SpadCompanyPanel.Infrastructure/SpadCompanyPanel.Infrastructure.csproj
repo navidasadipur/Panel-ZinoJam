@@ -70,6 +70,10 @@
     <Compile Include="Migrations\202012210849043_Initial.Designer.cs">
       <DependentUpon>202012210849043_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103060650281_enumChanged-UtilityFolder.cs" />
+    <Compile Include="Migrations\202103060650281_enumChanged-UtilityFolder.Designer.cs">
+      <DependentUpon>202103060650281_enumChanged-UtilityFolder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,6 +114,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012210849043_Initial.resx">
       <DependentUpon>202012210849043_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103060650281_enumChanged-UtilityFolder.resx">
+      <DependentUpon>202103060650281_enumChanged-UtilityFolder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

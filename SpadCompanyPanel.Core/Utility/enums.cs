@@ -24,6 +24,7 @@ namespace SpadCompanyPanel.Core.Utility
         Pinterest = 1012,
         Facebook = 1010,
         BlogImage = 1013,
-        ContactInfo = 1014
+        ContactInfo = 1014,
+        SupportPhone = 2014
     }
 }

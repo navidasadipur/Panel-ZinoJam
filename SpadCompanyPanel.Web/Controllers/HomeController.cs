@@ -131,9 +131,11 @@ namespace SpadCompanyPanel.Web.Controllers
         {
 
             var footerContent = new FooterViewModel();
+            footerContent.ShortDescription = _contentRepo.GetContentByTypeId((int)StaticContentTypes.CompanyHistory).FirstOrDefault();
             footerContent.Email = _contentRepo.Get((int) StaticContents.Email);
             footerContent.Address = _contentRepo.Get((int) StaticContents.Address);
             footerContent.Phone = _contentRepo.Get((int) StaticContents.Phone);
+            footerContent.SupportPhone = _contentRepo.Get((int)StaticContents.SupportPhone);
             footerContent.Youtube = _contentRepo.Get((int) StaticContents.Youtube);
             footerContent.Instagram = _contentRepo.Get((int) StaticContents.Instagram);
             footerContent.Twitter = _contentRepo.Get((int) StaticContents.Twitter);
