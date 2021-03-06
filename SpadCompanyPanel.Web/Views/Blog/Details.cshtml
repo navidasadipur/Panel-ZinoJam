@@ -10,9 +10,9 @@
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">خانه</a></li>
-                    <li class="breadcrumb-item"><a href="blog.html">بلاگ</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">جزئیات بلاگ</li>
+                    <li class="breadcrumb-item"><a href="home/index">خانه</a></li>
+                    <li class="breadcrumb-item"><a href="/blog">بلاگ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@Model.Title</li>
                 </ol>
             </nav>
 
@@ -22,13 +22,14 @@
                     <div class="blog-details">
                         <figure class="blog-img">
                             <a href="blog-details.html">
-                                <img src="~/Content/client/wp-content/themes/uniqo/img/blog.jpg" alt="blog-img" style="width:100%">
+                                <img src="/Files/ArticleImages/Image/@Model.Image" alt="@Model.Title" style="width:100%">
                             </a>
                         </figure>
                         <div class="blog-details-body">
 
-                            <h1 class="blog-details-title">هر آنچه باید درباره ما بدانید</h1>
+                            <h1 class="blog-details-title">@Model.Title</h1>
                             <p class="blog-details-txt">
+                                @Model.ShortDescription
                                 زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
                                 زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
                                 زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
@@ -43,6 +44,7 @@
                             </p>
                             <h2 class="blog-details-title">جزئیات بلاگ به صورت لیستی</h2>
                             <ul>
+
                                 <li>زینو جم</li>
                                 <li>زینو جم</li>
                                 <li>زینو جم</li>
@@ -50,20 +52,108 @@
                                 <li>زینو جم</li>
                                 <li>زینو جم</li>
                             </ul>
-                            <h1 class="blog-details-title">هر آنچه باید درباره ما بدانید</h1>
+                            <h1 class="blog-details-title">@Model.Title</h1>
                             <p class="blog-details-txt">
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
+                                @Html.Raw(Model.Description)
                             </p>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    @*<div class="blog-meta mb-xl-20">
+                                        <h2 class="blog-title text-light-black">@Model.Title</h2>
+                                        <h6 class="text-light-white fs-14">@Model.PersianDate</h6>
+                                        <p class="text-light-white">
+                                            @Model.ShortDescription
+                                        </p>
+                                    </div>
+                                    <div class="blog-meta mb-xl-20">
+                                        <p class="text-light-white">
+                                            @Html.Raw(Model.Description)
+                                        </p>
+                                    </div>*@
+                                    <div class="comment-box">
+                                        <div class="section-header-left">
+                                            <h3 class="text-light-black header-title">نظرات</h3>
+                                        </div>
+                                        @foreach (var item in Model.ArticleComments.Where(c => c.ParentId == null))
+                                        {
+                                            <div class="review-box">
+                                                <div class="review-user">
+                                                    <div class="review-user-img">
+                                                        <img src="/Files/UserAvatars/user-avatar.png" style="width: 50px" class="rounded-circle" alt="@item.Name">
+                                                        <div class="reviewer-name">
+                                                            <p class="text-light-black fw-600">
+                                                                @item.Name
+                                                            </p><a onclick="AnswerComment(@item.Id,'@item.Name')" style="cursor: pointer" class="text-light-black"><i class="fas fa-reply text-black"></i> پاسخ دادن  </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review-date">
+                                                        <span class="text-light-white">@item.AddedDate</span>
+                                                    </div>
+                                                </div>
+                                                <p class="text-light-black">@item.Message</p>
+                                            </div>
+                                            foreach (var child in Model.ArticleComments.Where(c => c.ParentId == item.Id))
+                                            {
+                                                <div class="review-box comment-reply">
+                                                    <div class="review-user">
+                                                        <div class="review-user-img">
+                                                            <img src="/Files/UserAvatars/user-avatar.png" style="width: 50px" class="rounded-circle" alt="@child.Name">
+                                                            <div class="reviewer-name">
+                                                                <p class="text-light-black fw-600">
+                                                                    @child.Name
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-date">
+                                                            <span class="text-light-white">@child.AddedDate</span>
+                                                        </div>
+                                                    </div>
+                                                    <p class="text-light-black">@child.Message</p>
+                                                </div>
+                                            }
+                                        }
+                                    </div>
+                                    <div class="comment-form">
+                                        <div class="section-header-left">
+                                            <h3 id="answerPerson" class="text-light-black header-title">نظر بدهید</h3>
+                                        </div>
+                                        @using (Html.BeginForm("PostComment", "Blog", FormMethod.Post, new { id = "commentform", @class = "comment-form" }))
+                                        {
+                                            <input type="hidden" id="ArticleId" name="ArticleId" value="@Model.Id">
+                                            <input type="hidden" id="ParentId" name="ParentId" value="">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="text-light-black fw-600">نام و نام خانوادگی</label>
+                                                        <input type="text" name="Name" id="Name" class="form-control form-control-submit"
+                                                               placeholder="نام و نام خانوادگی">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="text-light-black fw-600">ایمیل</label>
+                                                        <input type="email" name="Email" id="Email"
+                                                               class="form-control form-control-submit"
+                                                               placeholder="ایمیل">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label class="text-light-black fw-600">نظر شما</label>
+                                                        <textarea class="form-control form-control-submit" name="Message" id="Message" rows="6"
+                                                                  placeholder="نظر شما"></textarea>
+                                                    </div>
+                                                    <button type="submit"
+                                                            class="btn-second btn-submit full-width">
+                                                        ارسال
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
@@ -75,20 +165,13 @@
                     <div class="blog-left">
                         @Html.Action("ArticleCategoriesSection", "Blog")
                         @Html.Action("LatestArticlesSection", "Blog")
-
-
-
                     </div>
                 </div>
             </div>
 
 
         </div>
-
-
     </div>
-
-
 
 
 
@@ -230,14 +313,15 @@
             </div>
         </div>
     </div>
-</section>
+</section>*@
+
 <style>
     .my-error-class {
         color: #FF0000; /* red */
     }
 </style>
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @*@Scripts.Render("~/bundles/jqueryval")*@
     <script>
         $("#commentform").validate({
             errorClass: "my-error-class",
@@ -269,4 +353,4 @@
             $('#ParentId').val("");
         }
     </script>
-}*@
+}

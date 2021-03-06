@@ -88,7 +88,7 @@ namespace SpadCompanyPanel.Web.Controllers
             }
             return PartialView(articleCategoriesVm);
         }
-        [Route("Blog/Post/{id}/{title}")]
+        [Route("Blog/Post/{id}")]
         public ActionResult Details(int id)
         {
             _articlesRepo.UpdateArticleViewCount(id);
@@ -122,7 +122,10 @@ namespace SpadCompanyPanel.Web.Controllers
                 _articlesRepo.AddComment(comment);
                 return RedirectToAction("ContactUsSummary", "Home");
             }
-            return RedirectToAction("Details", new { id = form.ArticleId });
+
+            var postTitle = _articlesRepo.Get(form.ArticleId).Title;
+
+            return RedirectToAction("Post", new { id = form.ArticleId });
         }
 
         public ActionResult LatestArticlesSection()

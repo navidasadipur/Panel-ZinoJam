@@ -14,7 +14,6 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/home">خانه</a></li>
-
                     @if (ViewBag.BreadCrumb != null)
                     {
                         <li class="breadcrumb-item" aria-current="page">@ViewBag.Title</li>
@@ -35,8 +34,8 @@
                     {
                         <div class="blog-post">
                             <figure class="blog-img">
-                                <a href="/">
-                                    <img src="~/Content/client/wp-content/themes/uniqo/img/blog3.jpg" alt="blog-img" style="width:100%">
+                                <a href="/Blog/Post/@item.Id">
+                                    <img src="/Files/ArticleImages/Thumb/@item.Image" alt="@item.Title" style="width:100%">
                                 </a>
                             </figure>
                             <div class="blog-body">
@@ -50,7 +49,7 @@
                                     </span>
                                 </p>
                                 <h2 class="blog-title">
-                                    <a href="/details">
+                                    <a href="/Blog/Post/@item.Id">
                                         @item.Title
                                     </a>
                                 </h2>

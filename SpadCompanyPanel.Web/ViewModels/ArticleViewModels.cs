@@ -145,6 +145,7 @@ namespace SpadCompanyPanel.Web.ViewModels
         public string Description { get; set; }
         public string Author { get; set; }
         public string PersianDate { get; set; }
+        public string SubTitles { get; set; }
         public List<ArticleTag> Tags { get; set; }
         public List<ArticleCommentViewModel> ArticleComments { get; set; }
         public CommentFormViewModel CommentForm { get; set; }
