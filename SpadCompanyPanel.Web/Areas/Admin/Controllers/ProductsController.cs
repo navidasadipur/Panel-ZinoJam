@@ -50,34 +50,34 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Product testimonial, HttpPostedFileBase TestimonialImage)
+        public ActionResult Create(Product product, HttpPostedFileBase ProductImage)
         {
             if (ModelState.IsValid)
             {
                 #region Upload Image
-                if (TestimonialImage != null)
+                if (ProductImage != null)
                 {
-                    if (System.IO.File.Exists(Server.MapPath("/Files/TestimonialImages/" + testimonial.Image)))
-                        System.IO.File.Delete(Server.MapPath("/Files/TestimonialImages/" + testimonial.Image));
+                    if (System.IO.File.Exists(Server.MapPath("/Files/ProductImages/" + product.Image)))
+                        System.IO.File.Delete(Server.MapPath("/Files/ProductImages/" + product.Image));
                     // Saving Temp Image
-                    var newFileName = Guid.NewGuid() + Path.GetExtension(TestimonialImage.FileName);
-                    TestimonialImage.SaveAs(Server.MapPath("/Files/TestimonialImages/Temp/" + newFileName));
+                    var newFileName = Guid.NewGuid() + Path.GetExtension(ProductImage.FileName);
+                    ProductImage.SaveAs(Server.MapPath("/Files/ProductImages/Temp/" + newFileName));
                     // Resize Image
                     ImageResizer image = new ImageResizer(200, 200);
-                    image.Resize(Server.MapPath("/Files/TestimonialImages/Temp/" + newFileName),
-                        Server.MapPath("/Files/TestimonialImages/" + newFileName));
+                    image.Resize(Server.MapPath("/Files/ProductImages/Temp/" + newFileName),
+                    Server.MapPath("/Files/ProductImages/" + newFileName));
 
                     // Deleting Temp Image
-                    System.IO.File.Delete(Server.MapPath("/Files/TestimonialImages/Temp/" + newFileName));
+                    System.IO.File.Delete(Server.MapPath("/Files/ProductImages/Temp/" + newFileName));
 
-                    testimonial.Image = newFileName;
+                    product.Image = newFileName;
                 }
                 #endregion
-                _repo.Add(testimonial);
-                return RedirectToAction("Index", new { id = testimonial.ProductCategoryId });
+                _repo.Add(product);
+                return RedirectToAction("Index", new { id = product.ProductCategoryId });
             }
 
-            return View(testimonial);
+            return View(product);
         }
 
         public ActionResult Edit(int? id)
@@ -87,45 +87,45 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Product testimonial = _repo.Get(id.Value);
+            Product product = _repo.Get(id.Value);
 
-            if (testimonial == null)
+            if (product == null)
             {
                 return HttpNotFound();
             }
 
-            ViewBag.CategoryTitle = _categoryRepo.Get(testimonial.ProductCategoryId.Value).Title;
+            ViewBag.CategoryTitle = _categoryRepo.Get(product.ProductCategoryId.Value).Title;
 
-            return PartialView(testimonial);
+            return PartialView(product);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Product testimonial, HttpPostedFileBase TestimonialImage)
+        public ActionResult Edit(Product product, HttpPostedFileBase ProductImage)
         {
             if (ModelState.IsValid)
             {
                 #region Upload Image
-                if (TestimonialImage != null)
+                if (ProductImage != null)
                 {
                     // Saving Temp Image
-                    var newFileName = Guid.NewGuid() + Path.GetExtension(TestimonialImage.FileName);
-                    TestimonialImage.SaveAs(Server.MapPath("/Files/TestimonialImages/Temp/" + newFileName));
+                    var newFileName = Guid.NewGuid() + Path.GetExtension(ProductImage.FileName);
+                    ProductImage.SaveAs(Server.MapPath("/Files/ProductImages/Temp/" + newFileName));
                     // Resize Image
                     ImageResizer image = new ImageResizer(200, 200);
-                    image.Resize(Server.MapPath("/Files/TestimonialImages/Temp/" + newFileName),
-                        Server.MapPath("/Files/TestimonialImages/" + newFileName));
+                    image.Resize(Server.MapPath("/Files/ProductImages/Temp/" + newFileName),
+                        Server.MapPath("/Files/ProductImages/" + newFileName));
 
                     // Deleting Temp Image
-                    System.IO.File.Delete(Server.MapPath("/Files/TestimonialImages/Temp/" + newFileName));
+                    System.IO.File.Delete(Server.MapPath("/Files/ProductImages/Temp/" + newFileName));
 
-                    testimonial.Image = newFileName;
+                    product.Image = newFileName;
                 }
                 #endregion
-                _repo.Update(testimonial);
-                return RedirectToAction("Index", new { id = testimonial.ProductCategoryId });
+                _repo.Update(product);
+                return RedirectToAction("Index", new { id = product.ProductCategoryId });
             }
-            return View(testimonial);
+            return View(product);
         }
         public ActionResult Delete(int? id)
         {
@@ -133,12 +133,12 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product testimonial = _repo.Get(id.Value);
-            if (testimonial == null)
+            Product product = _repo.Get(id.Value);
+            if (product == null)
             {
                 return HttpNotFound();
             }
-            return PartialView(testimonial);
+            return PartialView(product);
         }
 
         [HttpPost, ActionName("Delete")]

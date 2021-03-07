@@ -2565,7 +2565,7 @@
     <Content Include="Files\StaticContentImages\Image\b9ceb5ff-a790-4cad-83d0-7367130c72c4.jpg" />
     <Content Include="Files\StaticContentImages\Image\d707a0f6-8b5e-4555-acbb-c389b2739b76.jpg" />
     <Content Include="Files\StaticContentImages\Image\ea12332d-9547-449b-b020-3bd09a501197.jpg" />
-    <Content Include="Files\TestimonialImages\ae866eca-b014-4686-bc5b-c67248acea3b.jpg" />
+    <Content Include="Files\ProductImages\ae866eca-b014-4686-bc5b-c67248acea3b.jpg" />
     <Content Include="Files\UserAvatars\3cf0f330-af46-43b4-8f6d-578af670e801.jpg" />
     <Content Include="Files\UserAvatars\ca16d31f-18bd-44ef-9d34-bf9952ea165a.png" />
     <Content Include="Files\UserAvatars\user-avatar.png" />
@@ -5224,6 +5224,7 @@
     <Folder Include="Files\CertificatesImages\Temp\" />
     <Folder Include="Files\FoodImages\Temp\" />
     <Folder Include="Files\GalleryImages\Temp\" />
+    <Folder Include="Files\ProductImages\Temp\" />
     <Folder Include="Files\ProjectImages\Image\" />
     <Folder Include="Files\ProjectImages\ProjectGallery\" />
     <Folder Include="Files\ProjectImages\Thumb\" />
@@ -5231,7 +5232,6 @@
     <Folder Include="Files\Services\Image\" />
     <Folder Include="Files\Services\Thumb\" />
     <Folder Include="Files\StaticContentImages\Temp\" />
-    <Folder Include="Files\TestimonialImages\Temp\" />
     <Folder Include="Views\Articles\" />
   </ItemGroup>
   <ItemGroup>

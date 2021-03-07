@@ -21,5 +21,7 @@
     {
         @Html.AntiForgeryToken()
         <input type="submit" value="حذف" class="btn btn-danger mr-2" />
+
+        @Html.HiddenFor(model => model.ProductCategoryId)
     }
 </div>

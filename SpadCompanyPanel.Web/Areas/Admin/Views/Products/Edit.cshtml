@@ -14,6 +14,8 @@
         @Html.HiddenFor(model => model.InsertDate)
         @Html.HiddenFor(model => model.InsertUser)
         @Html.HiddenFor(model => model.Image)
+        @Html.HiddenFor(model => model.ProductCategoryId)
+
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -31,13 +33,13 @@
         <div class="form-group">
             <label class="control-label col-md-4">تصویر</label>
             <div class="col-lg-6 col-md-12 col-sm-12">
-                <div class="image-input image-input-outline" id="testimonial-image">
-                    <div class="image-input-wrapper" style="background-image: url(/Files/TestimonialImages/@Model.Image)"></div>
+                <div class="image-input image-input-outline" id="product-image">
+                    <div class="image-input-wrapper" style="background-image: url(/Files/ProductImages/@Model.Image)"></div>
 
                     <label class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="change" data-toggle="tooltip" title="" data-original-title="آپلود تصویر">
                         <i class="fa fa-pen icon-sm text-muted"></i>
-                        <input type="file" name="TestimonialImage" accept=".png, .jpg, .jpeg" />
-                        <input type="hidden" name="testimonial_image_remove" />
+                        <input type="file" name="ProductImage" accept=".png, .jpg, .jpeg" />
+                        <input type="hidden" name="product_image_remove" />
                     </label>
 
                     <span class="btn btn-xs btn-icon btn-circle btn-white btn-hover-text-primary btn-shadow" data-action="cancel" data-toggle="tooltip" title="حذف تصویر">
@@ -62,7 +64,7 @@
 }
 <script>
     $.validator.unobtrusive.parse("#form");
-    new KTImageInput('testimonial-image');
+    new KTImageInput('product-image');
 </script>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
