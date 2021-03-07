@@ -16,22 +16,35 @@ namespace SpadCompanyPanel.Web.Controllers
         private readonly StaticContentDetailsRepository _contentRepo;
         private readonly GalleriesRepository _galleryRepo;
         private readonly GalleryVideosRepository _galleryVideosRepo;
-        private readonly ProductsRepository _testimonialRepo;
+        private readonly ProductsRepository _productRepo;
         private readonly ContactFormsRepository _contactFormRepo;
         private readonly OurTeamRepository _ourTeamRepo;
         private readonly CertificatesRepository _certificatesRepo;
         private readonly FoodGalleriesRepository _foodGalleriesRepo;
+        private readonly ProdectCategoriesRepository _prodectCategoriesRepo;
 
-        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, ProductsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, CertificatesRepository certificatesRepo, FoodGalleriesRepository foodGalleriesRepo, GalleryVideosRepository galleryVideosRepo)
+
+        public HomeController(StaticContentDetailsRepository contentRepo,
+            GalleriesRepository galleryRepo,
+            ProductsRepository productRepo,
+            ContactFormsRepository contactFormRepo,
+            OurTeamRepository ourTeamRepo,
+            CertificatesRepository certificatesRepo,
+            FoodGalleriesRepository foodGalleriesRepo,
+            GalleryVideosRepository galleryVideosRepo,
+            ProdectCategoriesRepository prodectCategoriesRepo,
+            Product product
+            )
         {
             _contentRepo = contentRepo;
             _galleryRepo = galleryRepo;
-            _testimonialRepo = testimonialRepo;
+            _productRepo = productRepo;
             _contactFormRepo = contactFormRepo;
             _ourTeamRepo = ourTeamRepo;
             _certificatesRepo = certificatesRepo;
             _foodGalleriesRepo = foodGalleriesRepo;
             _galleryVideosRepo = galleryVideosRepo;
+            this._prodectCategoriesRepo = prodectCategoriesRepo;
         }
         public ActionResult Index()
         {
@@ -41,12 +54,31 @@ namespace SpadCompanyPanel.Web.Controllers
         public ActionResult Navbar()
         {
             ViewBag.Phone = _contentRepo.GetStaticContentDetail((int) StaticContents.Phone).ShortDescription;
-            return PartialView();
+
+            var viewModel = new NavbarViewModel
+            {
+                ProductCategories = _prodectCategoriesRepo.GetAllProductCategories()
+            };
+
+            return PartialView(viewModel);
         }
 
-        public ActionResult Products()
+        public ActionResult Products(int? id)
         {
-            return PartialView();
+            var viewModel = new ProductViewModel();
+
+            if (id == null)
+            {
+                viewModel.Products = _productRepo.GetAllProducts();
+
+                return PartialView(viewModel);
+            }
+
+            viewModel.Products = _productRepo.getProductsByCategoryId(id.Value);
+
+            ViewBag.CategoryTitle = _prodectCategoriesRepo.Get(id.Value).Title;
+
+            return PartialView(viewModel);
         }
 
         public ActionResult HomeSlider()
@@ -64,11 +96,11 @@ namespace SpadCompanyPanel.Web.Controllers
             var content = _contentRepo.GetContentByTypeId((int)StaticContentTypes.CompanyHistory).FirstOrDefault();
             return PartialView(content);
         }
-        public ActionResult Testimonials()
-        {
-            var content = _testimonialRepo.GetAll();
-            return PartialView(content);
-        }
+        //public ActionResult Testimonials()
+        //{
+        //    var content = _testimonialRepo.GetAll();
+        //    return PartialView(content);
+        //}
         public ActionResult GallerySlider()
         {
             var galleryContent = _galleryRepo.GetAll();

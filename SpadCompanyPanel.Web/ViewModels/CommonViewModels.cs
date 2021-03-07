@@ -7,6 +7,16 @@ using SpadCompanyPanel.Core.Models;
 
 namespace SpadCompanyPanel.Web.ViewModels
 {
+    public class NavbarViewModel
+    {
+        public NavbarViewModel()
+        {
+            ProductCategories = new List<ProductCategory>();
+        }
+        public List<ProductCategory> ProductCategories { get; set; }
+        public List<Product> Products { get; set; }
+    }
+
     public class AboutViewModel
     {
         [DataType(DataType.MultilineText)]

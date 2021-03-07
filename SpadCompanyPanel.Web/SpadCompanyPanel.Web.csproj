@@ -232,7 +232,7 @@
     <Compile Include="ViewModels\CommonViewModels.cs" />
     <Compile Include="ViewModels\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
-    <Compile Include="ViewModels\ProjectViewModels.cs" />
+    <Compile Include="ViewModels\ProductViewModels.cs" />
     <Compile Include="ViewModels\UserViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
