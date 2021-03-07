@@ -10,10 +10,10 @@ using SpadCompanyPanel.Infrastructure.Repositories;
 namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
 {
     [Authorize]
-    public class TestimonialsController : Controller
+    public class ProductsController : Controller
     {
-        private readonly TestimonialsRepository _repo;
-        public TestimonialsController(TestimonialsRepository repo)
+        private readonly ProductsRepository _repo;
+        public ProductsController(ProductsRepository repo)
         {
             _repo = repo;
         }
@@ -27,7 +27,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Testimonial testimonial, HttpPostedFileBase TestimonialImage)
+        public ActionResult Create(Product testimonial, HttpPostedFileBase TestimonialImage)
         {
             if (ModelState.IsValid)
             {
@@ -63,7 +63,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Testimonial testimonial = _repo.Get(id.Value);
+            Product testimonial = _repo.Get(id.Value);
             if (testimonial == null)
             {
                 return HttpNotFound();
@@ -73,7 +73,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Testimonial testimonial, HttpPostedFileBase TestimonialImage)
+        public ActionResult Edit(Product testimonial, HttpPostedFileBase TestimonialImage)
         {
             if (ModelState.IsValid)
             {
@@ -105,7 +105,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Testimonial testimonial = _repo.Get(id.Value);
+            Product testimonial = _repo.Get(id.Value);
             if (testimonial == null)
             {
                 return HttpNotFound();

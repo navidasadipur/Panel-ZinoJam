@@ -5,15 +5,12 @@ using System.Text;
 
 namespace SpadCompanyPanel.Core.Models
 {
-    public class Testimonial : IBaseEntity
+    public class Product : IBaseEntity
     {
         public int Id { get; set; }
         [Display(Name = "نام")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string Title { get; set; }
-        [Display(Name = "نقش")]
-        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
-        public string Role { get; set; }
         [Display(Name = "تصویر")]
         public string Image { get; set; }
         [Display(Name = "توضیح")]

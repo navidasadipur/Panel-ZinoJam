@@ -16,13 +16,13 @@ namespace SpadCompanyPanel.Web.Controllers
         private readonly StaticContentDetailsRepository _contentRepo;
         private readonly GalleriesRepository _galleryRepo;
         private readonly GalleryVideosRepository _galleryVideosRepo;
-        private readonly TestimonialsRepository _testimonialRepo;
+        private readonly ProductsRepository _testimonialRepo;
         private readonly ContactFormsRepository _contactFormRepo;
         private readonly OurTeamRepository _ourTeamRepo;
         private readonly CertificatesRepository _certificatesRepo;
         private readonly FoodGalleriesRepository _foodGalleriesRepo;
 
-        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, TestimonialsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, CertificatesRepository certificatesRepo, FoodGalleriesRepository foodGalleriesRepo, GalleryVideosRepository galleryVideosRepo)
+        public HomeController(StaticContentDetailsRepository contentRepo, GalleriesRepository galleryRepo, ProductsRepository testimonialRepo, ContactFormsRepository contactFormRepo, OurTeamRepository ourTeamRepo, CertificatesRepository certificatesRepo, FoodGalleriesRepository foodGalleriesRepo, GalleryVideosRepository galleryVideosRepo)
         {
             _contentRepo = contentRepo;
             _galleryRepo = galleryRepo;

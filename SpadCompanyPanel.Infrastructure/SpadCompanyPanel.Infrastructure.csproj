@@ -74,6 +74,10 @@
     <Compile Include="Migrations\202103060650281_enumChanged-UtilityFolder.Designer.cs">
       <DependentUpon>202103060650281_enumChanged-UtilityFolder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.cs" />
+    <Compile Include="Migrations\202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.Designer.cs">
+      <DependentUpon>202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +93,7 @@
     <Compile Include="Repositories\GalleryVideosRepository.cs" />
     <Compile Include="Repositories\LogsRepository.cs" />
     <Compile Include="Repositories\OurTeamRepository.cs" />
+    <Compile Include="Repositories\ProdectCategoriesRepository.cs" />
     <Compile Include="Repositories\ProjectGalleriesRepository.cs" />
     <Compile Include="Repositories\ProjectsRepository.cs" />
     <Compile Include="Repositories\ProjectTypesRepository.cs" />
@@ -97,7 +102,7 @@
     <Compile Include="Repositories\StaticContentDetailsRepository.cs" />
     <Compile Include="Repositories\StaticContentsRepository.cs" />
     <Compile Include="Repositories\StaticContentTypes.cs" />
-    <Compile Include="Repositories\TestimonialsRepository.cs" />
+    <Compile Include="Repositories\ProductsRepository.cs" />
     <Compile Include="Repositories\UsersRepository.cs" />
     <Compile Include="Seed.cs" />
   </ItemGroup>
@@ -117,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103060650281_enumChanged-UtilityFolder.resx">
       <DependentUpon>202103060650281_enumChanged-UtilityFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.resx">
+      <DependentUpon>202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
