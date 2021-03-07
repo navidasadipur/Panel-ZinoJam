@@ -22,5 +22,10 @@ namespace SpadCompanyPanel.Core.Models
         public string UpdateUser { get; set; }
         public DateTime? UpdateDate { get; set; }
         public bool IsDeleted { get; set; }
+
+        public int? ProductCategoryId { get; set; }
+
+        [Display(Name = "دسته بندی")]
+        public ProductCategory ProductCategory { get; set; }
     }
 }

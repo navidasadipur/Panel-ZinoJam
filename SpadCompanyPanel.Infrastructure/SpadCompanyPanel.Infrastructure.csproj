@@ -78,6 +78,10 @@
     <Compile Include="Migrations\202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.Designer.cs">
       <DependentUpon>202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103070725274_ProductRepositoryAndProductsAreChanged.cs" />
+    <Compile Include="Migrations\202103070725274_ProductRepositoryAndProductsAreChanged.Designer.cs">
+      <DependentUpon>202103070725274_ProductRepositoryAndProductsAreChanged.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -125,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.resx">
       <DependentUpon>202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103070725274_ProductRepositoryAndProductsAreChanged.resx">
+      <DependentUpon>202103070725274_ProductRepositoryAndProductsAreChanged.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

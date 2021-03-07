@@ -2,19 +2,22 @@
 @using Kendo.Mvc.UI
 @using SpadCompanyPanel.Infrastructure.Helpers;
 @{
-    ViewBag.Title = "رضایت مشتریان";
+    ViewBag.Title = "محصولات";
 }
 <input type="hidden" id="nav_active" value="content_control">
-<input type="hidden" id="nav_item_active" value="product">
+<input type="hidden" id="nav_item_active" value="product_category">
 <div class="card card-custom">
     <div class="card-header flex-wrap border-0 pt-6 pb-0">
         <div class="card-title">
-            <h3 class="card-label">
-                @ViewBag.Title
-                <span class="d-block text-muted pt-2 font-size-sm">ویرایش قسمت رضایت مشتریان</span>
-            </h3>
+                <h3 class="card-label">
+                    @ViewBag.Title دسته @ViewBag.CategoryTitle
+                    <span class="d-block text-muted pt-2 font-size-sm">ویرایش @ViewBag.Title گروه @ViewBag.CategoryTitle ها</span>
+                </h3>
         </div>
         <div class="card-toolbar">
+            <a href="/Admin/ProductCategories" class="btn btn-light-success" style="margin-left:20px">
+                مدیریت دسته بندی محصولات
+            </a>
             <!--begin::Button-->
             <a onclick="@(CheckPermission.Check("productscreate") ? $"btnCreate()" : "accessDenied()")" class="btn btn-primary font-weight-bolder">
                 <span class="svg-icon svg-icon-md">
@@ -105,7 +108,7 @@
     </script>
     <script>
         function btnCreate() {
-            $.get("/Admin/Products/Create", function (result) {
+            $.get("/Admin/Products/Create?id=@ViewBag.CategoryId", function (result) {
                 $("#myModal").modal();
                 $("#myModalLabel").html("افرودن");
                 $("#myModalHeader");

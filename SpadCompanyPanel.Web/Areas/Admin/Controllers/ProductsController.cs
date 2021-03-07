@@ -13,17 +13,40 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
     public class ProductsController : Controller
     {
         private readonly ProductsRepository _repo;
-        public ProductsController(ProductsRepository repo)
+        private readonly ProdectCategoriesRepository _categoryRepo;
+        public ProductsController(
+            ProductsRepository repo,
+            ProdectCategoriesRepository categoryRepo)
         {
             _repo = repo;
+            _categoryRepo = categoryRepo;
         }
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
-            return View(_repo.GetAll());
+            if (id == null)
+            {
+                return RedirectToAction("Index", "ProductCategory");
+            }
+
+            var allProductsInCategory = _repo.getProductsByCategoryId(id.Value);
+
+            //category title and category id used for create products in a specific category
+            ViewBag.CategoryTitle = _categoryRepo.Get(id.Value).Title;
+            ViewBag.CategoryId = id;
+
+            return View(allProductsInCategory);
         }
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
-            return PartialView();
+            //ViewBag.CategoryTitle = _categoryRepo.Get(id.Value).Title;
+
+            var model = new Product
+            {
+                ProductCategoryId = id.Value,
+                ProductCategory = _categoryRepo.Get(id.Value)
+            };
+
+            return PartialView(model);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -51,7 +74,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                 }
                 #endregion
                 _repo.Add(testimonial);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = testimonial.ProductCategoryId });
             }
 
             return View(testimonial);
@@ -63,11 +86,16 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Product testimonial = _repo.Get(id.Value);
+
             if (testimonial == null)
             {
                 return HttpNotFound();
             }
+
+            ViewBag.CategoryTitle = _categoryRepo.Get(testimonial.ProductCategoryId.Value).Title;
+
             return PartialView(testimonial);
         }
 
@@ -95,7 +123,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                 }
                 #endregion
                 _repo.Update(testimonial);
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { id = testimonial.ProductCategoryId });
             }
             return View(testimonial);
         }
@@ -117,8 +145,11 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            var product = _repo.Get(id);
+
             _repo.Delete(id);
-            return RedirectToAction("Index");
+
+            return RedirectToAction("Index", new { id = product.ProductCategoryId });
         }
     }
 }
