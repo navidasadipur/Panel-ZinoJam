@@ -96,6 +96,7 @@
     <Compile Include="Repositories\GalleriesRepository.cs" />
     <Compile Include="Repositories\GalleryVideosRepository.cs" />
     <Compile Include="Repositories\LogsRepository.cs" />
+    <Compile Include="Repositories\IndexPartialRepository.cs" />
     <Compile Include="Repositories\OurTeamRepository.cs" />
     <Compile Include="Repositories\ProdectCategoriesRepository.cs" />
     <Compile Include="Repositories\ProjectGalleriesRepository.cs" />

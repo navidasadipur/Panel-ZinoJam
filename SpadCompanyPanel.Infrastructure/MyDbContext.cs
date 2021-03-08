@@ -34,5 +34,6 @@ namespace SpadCompanyPanel.Infrastructure
         public DbSet<FoodType> FoodTypes { get; set; }
         public DbSet<FoodGallery> FoodGalleries { get; set; }
         public DbSet<GalleryVideo> GalleryVideos { get; set; }
+        public DbSet<IndexPartial> IndexPartials { get; set; }
     }
 }

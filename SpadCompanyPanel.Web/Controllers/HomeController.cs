@@ -260,15 +260,13 @@ namespace SpadCompanyPanel.Web.Controllers
 
         public ActionResult HomePartOne()
         {
-
-
             return PartialView();
         }
-        public ActionResult HomePartTwo()
+        public ActionResult IndexPartTwo()
         {
             return PartialView();
         }
-        public ActionResult HomePartThree()
+        public ActionResult IndexPartThree()
         {
             return PartialView();
         }

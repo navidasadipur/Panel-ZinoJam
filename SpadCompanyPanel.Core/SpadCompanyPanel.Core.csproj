@@ -91,6 +91,7 @@
     <Compile Include="Models\Gallery.cs" />
     <Compile Include="Models\GalleryVideo.cs" />
     <Compile Include="Models\Log.cs" />
+    <Compile Include="Models\IndexPartial.cs" />
     <Compile Include="Models\OurTeam.cs" />
     <Compile Include="Models\Permission.cs" />
     <Compile Include="Models\ProductCategory.cs" />
