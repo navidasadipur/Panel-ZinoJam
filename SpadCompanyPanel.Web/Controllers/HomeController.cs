@@ -49,6 +49,8 @@ namespace SpadCompanyPanel.Web.Controllers
         public ActionResult Index()
         {
             //return Redirect("/Admin/Dashboard");
+            ViewBag.Instagram = _contentRepo.GetContentByTypeId(3);
+
             return View();
         }
         public ActionResult Navbar()
@@ -254,6 +256,16 @@ namespace SpadCompanyPanel.Web.Controllers
             }
             vOutput = @"<html><body><script>window.parent.CKEDITOR.tools.callFunction(" + CKEditorFuncNum + ", \"" + vImagePath + "\", \"" + vMessage + "\");</script></body></html>";
             return Content(vOutput);
+        }
+
+        public ActionResult SocialSection()
+        {
+            SocialViewModel model = new SocialViewModel();
+
+            model.Instagram= _contentRepo.Get(1009).Link;
+            model.Aparat = _contentRepo.Get(1012).Link;
+
+            return PartialView("SocialSection",model);
         }
     }
 }
