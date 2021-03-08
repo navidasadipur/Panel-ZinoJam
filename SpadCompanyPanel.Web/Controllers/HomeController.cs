@@ -258,6 +258,21 @@ namespace SpadCompanyPanel.Web.Controllers
             return Content(vOutput);
         }
 
+        public ActionResult HomePartOne()
+        {
+
+
+            return PartialView();
+        }
+        public ActionResult HomePartTwo()
+        {
+            return PartialView();
+        }
+        public ActionResult HomePartThree()
+        {
+            return PartialView();
+        }
+
         public ActionResult SocialSection()
         {
             SocialViewModel model = new SocialViewModel();
@@ -265,7 +280,7 @@ namespace SpadCompanyPanel.Web.Controllers
             model.Instagram= _contentRepo.Get(1009).Link;
             model.Aparat = _contentRepo.Get(1012).Link;
 
-            return PartialView("SocialSection",model);
+            return PartialView(model);
         }
     }
 }

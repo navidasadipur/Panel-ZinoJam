@@ -233,6 +233,7 @@
     <Compile Include="ViewModels\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="ViewModels\ProductViewModels.cs" />
+    <Compile Include="ViewModels\HomePartOneViewModels.cs" />
     <Compile Include="ViewModels\SocialViewModel.cs" />
     <Compile Include="ViewModels\UserViewModels.cs" />
   </ItemGroup>
@@ -5218,6 +5219,9 @@
     <Content Include="Views\Shared\_Layout3.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Home\SocialSection.cshtml" />
+    <Content Include="Views\Home\HomePartOne.cshtml" />
+    <Content Include="Views\Home\HomePartTwo.cshtml" />
+    <Content Include="Views\Home\HomePartThree.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
