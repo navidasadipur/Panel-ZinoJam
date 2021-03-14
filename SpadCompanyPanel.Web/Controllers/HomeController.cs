@@ -22,7 +22,7 @@ namespace SpadCompanyPanel.Web.Controllers
         private readonly CertificatesRepository _certificatesRepo;
         private readonly FoodGalleriesRepository _foodGalleriesRepo;
         private readonly ProdectCategoriesRepository _prodectCategoriesRepo;
-
+        private readonly StaticContentDetailsRepository _staticContentDetailsRepo;
 
         public HomeController(StaticContentDetailsRepository contentRepo,
             GalleriesRepository galleryRepo,
@@ -33,7 +33,8 @@ namespace SpadCompanyPanel.Web.Controllers
             FoodGalleriesRepository foodGalleriesRepo,
             GalleryVideosRepository galleryVideosRepo,
             ProdectCategoriesRepository prodectCategoriesRepo,
-            Product product
+            Product product,
+            StaticContentDetailsRepository staticContentDetailsRepo
             )
         {
             _contentRepo = contentRepo;
@@ -45,6 +46,7 @@ namespace SpadCompanyPanel.Web.Controllers
             _foodGalleriesRepo = foodGalleriesRepo;
             _galleryVideosRepo = galleryVideosRepo;
             this._prodectCategoriesRepo = prodectCategoriesRepo;
+            this._staticContentDetailsRepo = staticContentDetailsRepo;
         }
         public ActionResult Index()
         {
@@ -258,17 +260,75 @@ namespace SpadCompanyPanel.Web.Controllers
             return Content(vOutput);
         }
 
-        public ActionResult HomePartOne()
+        public ActionResult IndexPartOne()
         {
-            return PartialView();
+            var section1Cover = _staticContentDetailsRepo.GetStaticContentDetail(3024);
+            var section1Part2 = _staticContentDetailsRepo.GetStaticContentDetail(3029);
+            var section1part3 = _staticContentDetailsRepo.GetStaticContentDetail(3031);
+            var section1Video = _galleryVideosRepo.GetFirstVideo();
+            var section1VideoDescription = _staticContentDetailsRepo.GetStaticContentDetail(3034);
+
+            var model = new IndexPartViewModels()
+            {
+                Description = section1Cover.Description,
+                ButtonLink = section1Cover.Link,
+                CoverImage = section1Cover.Image,
+                Part2Image = section1Part2.Image,
+                part2Description = section1Part2.Description,
+                part3Image = section1part3.Image,
+                part3Description = section1part3.Description,
+                VideoDescriptions = section1VideoDescription.Description,
+                Video = section1Video.Video
+            };
+
+            return PartialView(model);
         }
         public ActionResult IndexPartTwo()
         {
-            return PartialView();
+            var section2Cover = _staticContentDetailsRepo.GetStaticContentDetail(3024);
+            var section2Part2 = _staticContentDetailsRepo.GetStaticContentDetail(3029);
+            var section2part3 = _staticContentDetailsRepo.GetStaticContentDetail(3031);
+            var section2Video = _galleryVideosRepo.GetFirstVideo();
+            var section2VideoDescription = _staticContentDetailsRepo.GetStaticContentDetail(3034);
+
+            var model = new IndexPartViewModels()
+            {
+                Description = section2Cover.Description,
+                ButtonLink = section2Cover.Link,
+                CoverImage = section2Cover.Image,
+                Part2Image = section2Part2.Image,
+                part2Description = section2Part2.Description,
+                part3Image = section2part3.Image,
+                part3Description = section2part3.Description,
+                VideoDescriptions = section2VideoDescription.Description,
+                Video = section2Video.Video
+            };
+
+            return PartialView(model);
         }
+
         public ActionResult IndexPartThree()
         {
-            return PartialView();
+            var section3Cover = _staticContentDetailsRepo.GetStaticContentDetail(3041);
+            var section3Part2 = _staticContentDetailsRepo.GetStaticContentDetail(3042);
+            var section3part3 = _staticContentDetailsRepo.GetStaticContentDetail(3043);
+            var section3Video = _galleryVideosRepo.GetFirstVideo();
+            var section3VideoDescription = _staticContentDetailsRepo.GetStaticContentDetail(3044);
+
+            var model = new IndexPartViewModels()
+            {
+                Description = section3Cover.Description,
+                ButtonLink = section3Cover.Link,
+                CoverImage = section3Cover.Image,
+                Part2Image = section3Part2.Image,
+                part2Description = section3Part2.Description,
+                part3Image = section3part3.Image,
+                part3Description = section3part3.Description,
+                VideoDescriptions = section3VideoDescription.Description,
+                Video = section3Video.Video
+            };
+
+            return PartialView(model);
         }
 
         public ActionResult SocialSection()

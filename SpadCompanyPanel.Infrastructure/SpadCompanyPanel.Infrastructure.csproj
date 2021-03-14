@@ -86,6 +86,10 @@
     <Compile Include="Migrations\202103080936480_IndexPartialsModelAndRepositoryAdded.Designer.cs">
       <DependentUpon>202103080936480_IndexPartialsModelAndRepositoryAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103140732142_videoRepositoryBugFixed.cs" />
+    <Compile Include="Migrations\202103140732142_videoRepositoryBugFixed.Designer.cs">
+      <DependentUpon>202103140732142_videoRepositoryBugFixed.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -140,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103080936480_IndexPartialsModelAndRepositoryAdded.resx">
       <DependentUpon>202103080936480_IndexPartialsModelAndRepositoryAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103140732142_videoRepositoryBugFixed.resx">
+      <DependentUpon>202103140732142_videoRepositoryBugFixed.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

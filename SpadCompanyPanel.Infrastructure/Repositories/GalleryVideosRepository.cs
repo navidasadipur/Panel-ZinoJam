@@ -16,5 +16,25 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
             _context = context;
             _logger = logger;
         }
+
+        public GalleryVideo GetFirstVideo()
+        {
+            return _context.GalleryVideos.Where(v => v.IsDeleted == false).FirstOrDefault();
+        }
+
+        public GalleryVideo GetSecondVideo()
+        {
+            return _context.GalleryVideos.Where(v => v.IsDeleted == false).OrderBy(c => c.Id).Skip(1).FirstOrDefault();
+        }
+
+        public GalleryVideo GetThirdVideo()
+        {
+            return _context.GalleryVideos.Where(v => v.IsDeleted == false).OrderBy(c => c.Id).Skip(2).FirstOrDefault();
+        }
+
+        public List<GalleryVideo> GetAllVideoes()
+        {
+            return _context.GalleryVideos.Where(ch => ch.IsDeleted == false).OrderBy(ch => ch.Id).ToList();
+        }
     }
 }

@@ -198,6 +198,7 @@
     <Compile Include="Areas\Admin\Controllers\ContactFormController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\FaqController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FirstPageController.cs" />
     <Compile Include="Areas\Admin\Controllers\FoodGalleriesController.cs" />
     <Compile Include="Areas\Admin\Controllers\FoodsController.cs" />
     <Compile Include="Areas\Admin\Controllers\FoodTypesController.cs" />
@@ -214,6 +215,8 @@
     <Compile Include="Areas\Admin\Controllers\StaticContentTypesController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Admin\Controllers\UsersController.cs" />
+    <Compile Include="Areas\Admin\Models\FirstPagePartialViewModel.cs" />
+    <Compile Include="Areas\Admin\Models\PersonalCharacterPanelView.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -233,7 +236,7 @@
     <Compile Include="ViewModels\IdentityModels.cs" />
     <Compile Include="ViewModels\ManageViewModels.cs" />
     <Compile Include="ViewModels\ProductViewModels.cs" />
-    <Compile Include="ViewModels\IndexPartOneViewModels.cs" />
+    <Compile Include="ViewModels\IndexPartViewModels.cs" />
     <Compile Include="ViewModels\SocialViewModel.cs" />
     <Compile Include="ViewModels\UserViewModels.cs" />
   </ItemGroup>
@@ -3032,6 +3035,14 @@
     <Content Include="Areas\Admin\Views\ProductCategories\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategories\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\ProductCategories\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FirstPage\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\FirstPage\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\FirstPage\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\FirstPage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\FirstPage\Create1.cshtml" />
+    <Content Include="Areas\Admin\Views\FirstPage\Create2.cshtml" />
+    <Content Include="Areas\Admin\Views\FirstPage\Create3.cshtml" />
+    <Content Include="Areas\Admin\Views\FirstPage\Create11.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -5225,7 +5236,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Files\ArticleImages\Temp\" />
     <Folder Include="Files\CertificatesImages\Temp\" />
     <Folder Include="Files\FoodImages\Temp\" />
