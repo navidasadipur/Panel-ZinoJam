@@ -285,11 +285,11 @@ namespace SpadCompanyPanel.Web.Controllers
         }
         public ActionResult IndexPartTwo()
         {
-            var section2Cover = _staticContentDetailsRepo.GetStaticContentDetail(3024);
-            var section2Part2 = _staticContentDetailsRepo.GetStaticContentDetail(3029);
-            var section2part3 = _staticContentDetailsRepo.GetStaticContentDetail(3031);
+            var section2Cover = _staticContentDetailsRepo.GetStaticContentDetail(3036);
+            var section2Part2 = _staticContentDetailsRepo.GetStaticContentDetail(3037);
+            var section2part3 = _staticContentDetailsRepo.GetStaticContentDetail(3038);
             var section2Video = _galleryVideosRepo.GetFirstVideo();
-            var section2VideoDescription = _staticContentDetailsRepo.GetStaticContentDetail(3034);
+            var section2VideoDescription = _staticContentDetailsRepo.GetStaticContentDetail(3040);
 
             var model = new IndexPartViewModels()
             {

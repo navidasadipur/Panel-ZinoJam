@@ -79,7 +79,7 @@
 
 
 
-        <a xlink:href="product-category/%d9%be%d9%88%d8%af%d8%b1-%d9%84%d8%a8%d8%a7%d8%b3%d8%b4%d9%88%db%8c%db%8c/index.html">
+        <a xlink:href="@Model.ButtonLink">
         <g id="svg2_rect" class="svg_rect">
         <path id="svg2_btn1" class="_svg_btn" opacity="0.3" fill="none" stroke="#FFFFFF"
               stroke-miterlimit="10" enable-background="new    " d="M244.05,414.073
@@ -161,11 +161,12 @@
 
                         </g>
                     </a>
-        <text id="tp2_title" class="tp2_title tp_title" fill="#FFFFFF" transform="matrix(1 0 0 1 280 249)">شرکت بهداشتی زینو جم2-1</text>
+            @Html.Raw(Model.Description)
+        @*<text id="tp2_title" class="tp2_title tp_title" fill="#FFFFFF" transform="matrix(1 0 0 1 280 249)">شرکت بهداشتی زینو جم</text>
         <text id="tp2_subtitle" class="tp2_subtitle tp_subtitle" fill="#FFFFFF"
               transform="matrix(1 0 0 1 220 320)">تولید انواع وسایل بهداشتی2-1</text>
         <text id="tp2_subtitle2" class="tp2_subtitle tp_subtitle" fill="#FFFFFF"
-              transform="matrix(1 0 0 1 150 370)">تولید انواع ماسک با کیفیت بالا2-1</text>
+              transform="matrix(1 0 0 1 150 370)">تولید انواع ماسک با کیفیت بالا2-1</text>*@
                     </svg>
         <div class="res_tp_img2 hcenter" id="res_tp_img2"></div>
         <svg version="1.1" id="res_tp_svg2" class="res_tp_svg2" xmlns="http://www.w3.org/2000/svg"
@@ -210,7 +211,7 @@
 
 
 
-        <a xlink:href="product-category/%d9%be%d9%88%d8%af%d8%b1-%d9%84%d8%a8%d8%a7%d8%b3%d8%b4%d9%88%db%8c%db%8c/index.html">
+        <a xlink:href="@Model.ButtonLink)">
 
 
         <g>
@@ -239,13 +240,13 @@
               transform="matrix(1 0 0 1 -70 457)">ویژگی‌های بیشتر</text>
                 </g>
 
-
-        <text id="res_tp2_title" class="res_tp2_title res_tp_title" fill="#FFFFFF"
+            @Html.Raw(Model.Description)
+        @*<text id="res_tp2_title" class="res_tp2_title res_tp_title" fill="#FFFFFF"
               transform="matrix(1 0 0 1 30 330)">پودر لباسشویی ماشینی</text>
         <text id="res_tp2_subtitle" class="res_tp2_subtitle res_tp_subtitle" fill="#FFFFFF"
               transform="matrix(1 0 0 1 20 370)">با تکنولوژی محافظت از الیاف لباس</text>
         <text id="res_tp2_subtitle2" class="res_tp2_subtitle res_tp_subtitle" fill="#FFFFFF"
-              transform="matrix(1 0 0 1 -30 400)">پاک&zwnj;کننده قوی لکه &zwnj;های یقه و سرآستین</text>
+              transform="matrix(1 0 0 1 -30 400)">پاک&zwnj;کننده قوی لکه &zwnj;های یقه و سرآستین</text>*@
                     </a>
                 </svg>
 
@@ -300,11 +301,11 @@
                     <tr>
 
                         <td>
-
-                            <h2>
+                            @Html.Raw(Model.part2Description)
+                            @*<h2>
                                 2-2شرکت تولید محصولات بهداشتی <br />
                                 زینو جم با داشتن چندین سال تجربه2-2
-                            </h2>
+                            </h2>*@
                         </td>
 
                     </tr>
@@ -372,12 +373,12 @@
                     <tr>
 
                         <td>
-
-                            <h2>
+                            @Html.Raw(Model.part3Description)
+                            @*<h2>
                                 2-3تولید بهترین <br />
                                 محصولات بهداشتی و <br />
                                 2-3انواع ماسک
-                            </h2>
+                            </h2>*@
                         </td>
 
                     </tr>
@@ -433,9 +434,9 @@
                     <tr>
 
                         <td>
-
-                            2-2شرکت تولید محصولات بهداشتی <br />
-                            زینو جم با داشتن چندین سال تجربه2-2
+                            @Html.Raw(Model.part2Description)
+                            @*2-2شرکت تولید محصولات بهداشتی <br />
+                            زینو جم با داشتن چندین سال تجربه2-2*@
 
                         </td>
 
@@ -489,10 +490,10 @@
                     <tr>
 
                         <td>
-
-                            شرکت زینو جم<br />
+                            @Html.Raw(Model.part3Description)
+                            @*شرکت زینو جم<br />
                             تولید انواع <br />
-                            وسایل بهداشتی
+                            وسایل بهداشتی*@
 
                         </td>
 
@@ -520,7 +521,8 @@
 
                     </svg>
         <ul dir="rtl" class="footer_txt footer2_txt">
-            <li class="footer_txt1 footer1_txt1" id="footer2_txt1">
+            @Html.Raw(Model.VideoDescriptions)
+            @*<li class="footer_txt1 footer1_txt1" id="footer2_txt1">
                 بهترین شرکت تولید کننده محصولات بهداشتی2
             </li>
             <li class="footer_txt2 footer1_txt2" id="footer2_txt2">
@@ -528,7 +530,7 @@
             </li>
             <li class="footer_txt3 footer1_txt3" id="footer2_txt3">
                 شرکت زینو جم با داشتن چندین سال تجربه بهترین محصولات را تولید می کند2
-            </li>
+            </li>*@
         </ul>
 
         <div class="play_btn vcenter" id="play_btn2"></div>
@@ -582,8 +584,8 @@
 
             </div>
             <ul dir="rtl" class="res_footer2_txt res_footer_txt">
-
-                <li class="res_footer2_txt1" id="footer2_txt1">
+                @Html.Raw(Model.VideoDescriptions)
+                @*<li class="res_footer2_txt1" id="footer2_txt1">
                     بهترین شرکت تولید کننده محصولات بهداشتی2
                 </li>
                 <li class="res_footer2_txt2" id="footer2_txt2">
@@ -591,7 +593,7 @@
                 </li>
                 <li class="res_footer2_txt3" id="footer2_txt3">
                     2شرکت زینو جم با داشتن چندین سال تجربه بهترین محصولات را تولید می کند
-                </li>
+                </li>*@
             </ul>
         </div>
 
