@@ -51,21 +51,19 @@ namespace SpadCompanyPanel.Web.ViewModels
 
         [MaxLength(600)]
         [Display(Name = "نام و نام خانوادگی")]
-        [Required(AllowEmptyStrings = false,ErrorMessage = "لطفا {0} خود را وارد کنید")]
+        [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
         public string Name { get; set; }
-        
-        [Display(Name = "متن")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "لطفا {0} خود را وارد کنید")]
-        [DataType(DataType.MultilineText)]
-        public string Message { get; set; }
 
         [Display(Name = "ایمیل")]
-        [Required(AllowEmptyStrings = false, ErrorMessage = "لطفا {0} خود را وارد کنید")]
+        [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
         [EmailAddress(ErrorMessage = "{0} وارد شده معتبر نیست")]
         [MaxLength(600)]
         public string CustomerEmail { get; set; }
 
-
+        [Display(Name = "متن")]
+        [Required(ErrorMessage = "لطفا {0} خود را وارد کنید")]
+        [DataType(DataType.MultilineText)]
+        public string Message { get; set; }
     }
 
     public class GalleryPageViewModel
