@@ -18,9 +18,6 @@ namespace SpadCompanyPanel.Web.Controllers
         private readonly GalleryVideosRepository _galleryVideosRepo;
         private readonly ProductsRepository _productRepo;
         private readonly ContactFormsRepository _contactFormRepo;
-        private readonly OurTeamRepository _ourTeamRepo;
-        private readonly CertificatesRepository _certificatesRepo;
-        private readonly FoodGalleriesRepository _foodGalleriesRepo;
         private readonly ProdectCategoriesRepository _prodectCategoriesRepo;
         private readonly StaticContentDetailsRepository _staticContentDetailsRepo;
 
@@ -28,9 +25,6 @@ namespace SpadCompanyPanel.Web.Controllers
             GalleriesRepository galleryRepo,
             ProductsRepository productRepo,
             ContactFormsRepository contactFormRepo,
-            OurTeamRepository ourTeamRepo,
-            CertificatesRepository certificatesRepo,
-            FoodGalleriesRepository foodGalleriesRepo,
             GalleryVideosRepository galleryVideosRepo,
             ProdectCategoriesRepository prodectCategoriesRepo,
             Product product,
@@ -41,9 +35,6 @@ namespace SpadCompanyPanel.Web.Controllers
             _galleryRepo = galleryRepo;
             _productRepo = productRepo;
             _contactFormRepo = contactFormRepo;
-            _ourTeamRepo = ourTeamRepo;
-            _certificatesRepo = certificatesRepo;
-            _foodGalleriesRepo = foodGalleriesRepo;
             _galleryVideosRepo = galleryVideosRepo;
             this._prodectCategoriesRepo = prodectCategoriesRepo;
             this._staticContentDetailsRepo = staticContentDetailsRepo;
@@ -100,11 +91,7 @@ namespace SpadCompanyPanel.Web.Controllers
             var content = _contentRepo.GetContentByTypeId((int)StaticContentTypes.CompanyHistory).FirstOrDefault();
             return PartialView(content);
         }
-        //public ActionResult Testimonials()
-        //{
-        //    var content = _testimonialRepo.GetAll();
-        //    return PartialView(content);
-        //}
+
         public ActionResult GallerySlider()
         {
             var galleryContent = _galleryRepo.GetAll();
@@ -153,11 +140,6 @@ namespace SpadCompanyPanel.Web.Controllers
             return View();
         }
 
-        public ActionResult OurTeamSection()
-        {
-            var ourTeam = _ourTeamRepo.GetAll();
-            return PartialView(ourTeam);
-        }
 
         public ActionResult Footer()
         {
@@ -187,24 +169,12 @@ namespace SpadCompanyPanel.Web.Controllers
             };
             return View(vm);
         }
-        [Route("Certificates")]
-        public ActionResult Certificates()
-        {
-            var certificates = _certificatesRepo.GetAll();
-            return View(certificates);
-        }
-        [Route("Foods")]
-        public ActionResult Foods()
-        {
-            var foodGallery = _foodGalleriesRepo.GetAll();
-            return View(foodGallery);
-        }
-        //[Route("AboutUs")]
+
         public ActionResult About()
         {
             var aboutViewModel = new AboutViewModel();
 
-            aboutViewModel.AboutDescription = _contentRepo.GetContentByTypeId((int)StaticContentTypes.CompanyHistory).FirstOrDefault().ShortDescription;
+            aboutViewModel.AboutDescription = _contentRepo.GetContentByTypeId((int)StaticContentTypes.CompanyHistory).FirstOrDefault().Description;
 
             return PartialView(aboutViewModel);
         }

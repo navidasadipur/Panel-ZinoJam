@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SpadCompanyPanel.Core.Models
 {
-    public class IndexPartial : IBaseEntity
+    public class HomePartial : IBaseEntity
     {
         public int Id { get; set; }
 

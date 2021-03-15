@@ -16,10 +16,10 @@ namespace SpadCompanyPanel.Infrastructure
         public DbSet<ArticleTag> ArticleTags { get; set; }
         public DbSet<StaticContentType> StaticContentTypes { get; set; }
         public DbSet<StaticContentDetail> StaticContentDetails { get; set; }
-        public DbSet<OurTeam> OurTeams { get; set; }
+        //public DbSet<OurTeam> OurTeams { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Certificate> Certificates { get; set; }
+        //public DbSet<Certificate> Certificates { get; set; }
         public DbSet<Gallery> Galleries { get; set; }
         public DbSet<Service> Services { get; set; }
         public DbSet<ServiceInclude> ServiceIncludes { get; set; }
@@ -28,12 +28,12 @@ namespace SpadCompanyPanel.Infrastructure
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<RolePermission> RolePermissions { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
-        public DbSet<Faq> Faqs { get; set; }
+        //public DbSet<Faq> Faqs { get; set; }
         public DbSet<Log> Logs { get; set; }
-        public DbSet<Food> Foods { get; set; }
-        public DbSet<FoodType> FoodTypes { get; set; }
-        public DbSet<FoodGallery> FoodGalleries { get; set; }
+        //public DbSet<Food> Foods { get; set; }
+        //public DbSet<FoodType> FoodTypes { get; set; }
+        //public DbSet<FoodGallery> FoodGalleries { get; set; }
         public DbSet<GalleryVideo> GalleryVideos { get; set; }
-        public DbSet<IndexPartial> IndexPartials { get; set; }
+        public DbSet<HomePartial> IndexPartials { get; set; }
     }
 }

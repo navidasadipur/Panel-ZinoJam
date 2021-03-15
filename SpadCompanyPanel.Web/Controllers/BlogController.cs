@@ -67,20 +67,7 @@ namespace SpadCompanyPanel.Web.Controllers
             return View(articlelistVm);
         }
 
-        //public ActionResult TopArticlesSection(int? take = null)
-        //{
-        //    var getCount = 4;
-        //    if (take != null)
-        //        getCount = take.Value;
 
-        //    var articles = _articlesRepo.GetTopArticles(getCount);
-        //    var vm = new List<TopArticlesViewModel>();
-        //    foreach (var item in articles)
-        //    {
-        //        vm.Add(new TopArticlesViewModel(item));
-        //    }
-        //    return PartialView(vm);
-        //}
         public ActionResult ArticleCategoriesSection()
         {
             var categories = _articlesRepo.GetArticleCategories();

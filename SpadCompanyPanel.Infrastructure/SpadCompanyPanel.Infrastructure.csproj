@@ -94,6 +94,10 @@
     <Compile Include="Migrations\202103141417167_littleChangeInGetArticlesByCategoryId.Designer.cs">
       <DependentUpon>202103141417167_littleChangeInGetArticlesByCategoryId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103151026508_RepositoriesPolishedAndCleaned.cs" />
+    <Compile Include="Migrations\202103151026508_RepositoriesPolishedAndCleaned.Designer.cs">
+      <DependentUpon>202103151026508_RepositoriesPolishedAndCleaned.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,18 +106,12 @@
     <Compile Include="Repositories\ArticleHeadLinesRepository.cs" />
     <Compile Include="Repositories\ArticlesRepositoriy.cs" />
     <Compile Include="Repositories\AuthRepsitory.cs" />
-    <Compile Include="Repositories\CertificatesRepository.cs" />
     <Compile Include="Repositories\ContactFormsRepository.cs" />
-    <Compile Include="Repositories\FaqRepository.cs" />
     <Compile Include="Repositories\GalleriesRepository.cs" />
     <Compile Include="Repositories\GalleryVideosRepository.cs" />
+    <Compile Include="Repositories\HomePartialRepository.cs" />
     <Compile Include="Repositories\LogsRepository.cs" />
-    <Compile Include="Repositories\IndexPartialRepository.cs" />
-    <Compile Include="Repositories\OurTeamRepository.cs" />
     <Compile Include="Repositories\ProdectCategoriesRepository.cs" />
-    <Compile Include="Repositories\ProjectGalleriesRepository.cs" />
-    <Compile Include="Repositories\ProjectsRepository.cs" />
-    <Compile Include="Repositories\ProjectTypesRepository.cs" />
     <Compile Include="Repositories\ServiceIncludesRepository.cs" />
     <Compile Include="Repositories\ServicesRepository.cs" />
     <Compile Include="Repositories\StaticContentDetailsRepository.cs" />
@@ -154,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103141417167_littleChangeInGetArticlesByCategoryId.resx">
       <DependentUpon>202103141417167_littleChangeInGetArticlesByCategoryId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103151026508_RepositoriesPolishedAndCleaned.resx">
+      <DependentUpon>202103151026508_RepositoriesPolishedAndCleaned.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

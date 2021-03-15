@@ -16,8 +16,8 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
     [Authorize]
     public class FirstPageController : Controller
     {
-        private readonly IndexPartialRepository _repo;
-        public FirstPageController(IndexPartialRepository repo)
+        private readonly HomePartialRepository _repo;
+        public FirstPageController(HomePartialRepository repo)
         {
             _repo = repo;
         }

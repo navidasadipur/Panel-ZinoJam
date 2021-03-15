@@ -30,19 +30,8 @@
                             <h1 class="blog-details-title">@Model.Title</h1>
                             <p class="blog-details-txt">
                                 @Model.ShortDescription
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
-                                زینو جم یکی از بهترین ها در زمینه ماسک و لوازم بهداشتی است ،
                             </p>
-                            <h2 class="blog-details-title">جزئیات بلاگ به صورت لیستی</h2>
+                            @*<h2 class="blog-details-title">جزئیات بلاگ به صورت لیستی</h2>
                             <ul>
 
                                 <li>زینو جم</li>
@@ -51,7 +40,7 @@
                                 <li>زینو جم</li>
                                 <li>زینو جم</li>
                                 <li>زینو جم</li>
-                            </ul>
+                            </ul>*@
                             <h1 class="blog-details-title">@Model.Title</h1>
                             <p class="blog-details-txt">
                                 @Html.Raw(Model.Description)
@@ -179,7 +168,7 @@
 
 
 
-<section class="our-articles bg-light-theme section-padding pt-0">
+@*<section class="our-articles bg-light-theme section-padding pt-0">
     <div class="blog-page-banner"></div>
     <div class="container-fluid">
         <div class="row">
@@ -206,19 +195,19 @@
                             <li class="breadcrumb-item">
                                 <a href="/blog" class="text-light-black">بلاگ</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">@model.title</li>
+                            <li class="breadcrumb-item active" aria-current="page">@Model.title</li>
                         </ul>
                     </div>
                     <div class="post-wrapper mb-xl-20">
-                        <img src="/files/articleimages/image/@model.image" class="img-fluid full-width" alt="@model.title">
+                        <img src="/files/articleimages/image/@Model.image" class="img-fluid full-width" alt="@Model.title">
                     </div>
                     <div class="row">
                         <div class="col-12">
                             <div class="blog-meta mb-xl-20">
-                                <h2 class="blog-title text-light-black">@model.title</h2>
-                                <h6 class="text-light-white fs-14">@model.persiandate</h6>
+                                <h2 class="blog-title text-light-black">@Model.title</h2>
+                                <h6 class="text-light-white fs-14">@Model.persiandate</h6>
                                 <p class="text-light-white">
-                                    @model.shortdescription
+                                    @Model.shortdescription
                                 </p>
                             </div>
                             <div class="blog-meta mb-xl-20">
@@ -275,7 +264,7 @@
                                 </div>
                                 @using (html.beginform("postcomment", "blog", formmethod.post, new { id = "commentform", @class = "comment-form" }))
                                 {
-                                    <input type="hidden" id="articleid" name="articleid" value="@model.id">
+                                    <input type="hidden" id="articleid" name="articleid" value="@Model.id">
                                     <input type="hidden" id="parentid" name="parentid" value="">
                                     <div class="row">
                                         <div class="col-md-6">
@@ -313,7 +302,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>*@
 
 <style>
     .my-error-class {
