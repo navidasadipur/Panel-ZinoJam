@@ -9,19 +9,17 @@
     <div id="parent-page" class="parent-page">
 
         <div class="container rtl">
-
-
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/home">خانه</a></li>
                     @if (ViewBag.BreadCrumb != null)
                     {
-                        <li class="breadcrumb-item" aria-current="page">@ViewBag.Title</li>
+                        <li class="breadcrumb-item" aria-current="page"><a href="/blog">@ViewBag.Title</a></li>
                         <li class="breadcrumb-item active" aria-current="page">@ViewBag.BreadCrumb</li>
                     }
                     else
                     {    
-                        <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
+                        <li class="breadcrumb-item active" aria-current="page"><a href="/blog">@ViewBag.Title</a></li>
                     }
 
                 </ol>

@@ -14,12 +14,12 @@
     {
         <div class="latest-blog">
             <div class="d-inline-block">
-                <a href="/Blog/Post/@Model[i].Id/@Model[i].Title.Replace(" ","-")">
-                    <img src="/Files/ArticleImages/Image/@Model[i].Image" alt="@Model[i].Title" class="latest-blog-img">
-                </a>
+                <a href="/Blog/Post/@Model[i].Id">                  @*/@Model[i].Title.Replace(" ","-")*@
+                                <img src="/Files/ArticleImages/Image/@Model[i].Image" alt="@Model[i].Title" class="latest-blog-img">
+                            </a>
             </div>
             <div class="latest-blog-title">
-                <a href="/Blog/Post/@Model[i].Id/@Model[i].Title.Replace(" ","-")">
+                <a href="/Blog/Post/@Model[i].Id">                    @*/@Model[i].Title.Replace(" ", "-")*@
                     <p>@Model[i].Title</p>
                 </a>
                 <span>

@@ -27,7 +27,7 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
         }
         public List<Article> GetArticles()
         {
-            return _context.Articles.Where(a=>a.IsDeleted == false).Include(a => a.User).Include(a=>a.ArticleTags).Include(a=>a.ArticleCategory).OrderByDescending(a=>a.AddedDate).ToList();
+            return _context.Articles.Where(a=>a.IsDeleted == false).Include(a => a.User).Include(a=>a.ArticleTags).Include(a=>a.ArticleCategory).Include(a => a.ArticleComments).OrderByDescending(a=>a.AddedDate).ToList();
         }
         public List<ArticleCategory> GetArticleCategories()
         {
@@ -87,7 +87,7 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
         }
         public List<Article> GetArticlesByCategory(int categoryId)
         {
-            return _context.Articles.Where(a => a.IsDeleted == false && a.ArticleCategoryId == categoryId).Include(a => a.User).Include(a => a.ArticleCategory).OrderByDescending(a => a.AddedDate).ToList();
+            return _context.Articles.Where(a => a.IsDeleted == false && a.ArticleCategoryId == categoryId).Include(a => a.User).Include(a => a.ArticleCategory).Include(a => a.ArticleComments).OrderByDescending(a => a.AddedDate).ToList();
         }
 
         public string GetAuthorRole(string userId)

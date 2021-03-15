@@ -122,6 +122,7 @@ namespace SpadCompanyPanel.Web.Controllers
             contactUsContent.Twitter = _contentRepo.Get((int)StaticContents.Twitter);
             contactUsContent.Pinterest = _contentRepo.Get((int)StaticContents.Pinterest);
             contactUsContent.Facebook = _contentRepo.Get((int)StaticContents.Facebook);
+            contactUsContent.Map = _contentRepo.Get((int)StaticContents.Map);
             //return View(contactUsContent);
 
             return PartialView(contactUsContent);
@@ -135,7 +136,7 @@ namespace SpadCompanyPanel.Web.Controllers
             {
                 Name = viewModel.Name,
                 Email = viewModel.CustomerEmail,
-                Message = viewModel.Message
+                Message = viewModel.Message,
             };
 
             if (ModelState.IsValid)
@@ -157,12 +158,7 @@ namespace SpadCompanyPanel.Web.Controllers
             var ourTeam = _ourTeamRepo.GetAll();
             return PartialView(ourTeam);
         }
-        [Route("OurTeam")]
-        public ActionResult OurTeamPage()
-        {
-            var ourTeam = _ourTeamRepo.GetAll();
-            return View(ourTeam);
-        }
+
         public ActionResult Footer()
         {
 
@@ -213,22 +209,6 @@ namespace SpadCompanyPanel.Web.Controllers
             return PartialView(aboutViewModel);
         }
 
-        [Route("ContactUs")]
-        public ActionResult Contact()
-        {
-            ViewBag.ContactUsPage = true;
-            var contactUsContent = new ContactUsViewModel();
-            contactUsContent.ContactInfo = _contentRepo.Get((int)StaticContents.ContactInfo);
-            contactUsContent.Email = _contentRepo.Get((int)StaticContents.Email);
-            contactUsContent.Address = _contentRepo.Get((int)StaticContents.Address);
-            contactUsContent.Phone = _contentRepo.Get((int)StaticContents.Phone);
-            contactUsContent.Youtube = _contentRepo.Get((int)StaticContents.Youtube);
-            contactUsContent.Instagram = _contentRepo.Get((int)StaticContents.Instagram);
-            contactUsContent.Twitter = _contentRepo.Get((int)StaticContents.Twitter);
-            contactUsContent.Pinterest = _contentRepo.Get((int)StaticContents.Pinterest);
-            contactUsContent.Facebook = _contentRepo.Get((int)StaticContents.Facebook);
-            return View(contactUsContent);
-        }
         public ActionResult UploadImage(HttpPostedFileBase upload, string CKEditorFuncNum, string CKEditor, string langCode)
         {
             string vImagePath = String.Empty;

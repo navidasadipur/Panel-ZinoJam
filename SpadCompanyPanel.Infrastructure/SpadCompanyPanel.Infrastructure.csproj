@@ -90,6 +90,10 @@
     <Compile Include="Migrations\202103140732142_videoRepositoryBugFixed.Designer.cs">
       <DependentUpon>202103140732142_videoRepositoryBugFixed.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103141417167_littleChangeInGetArticlesByCategoryId.cs" />
+    <Compile Include="Migrations\202103141417167_littleChangeInGetArticlesByCategoryId.Designer.cs">
+      <DependentUpon>202103141417167_littleChangeInGetArticlesByCategoryId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -147,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103140732142_videoRepositoryBugFixed.resx">
       <DependentUpon>202103140732142_videoRepositoryBugFixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103141417167_littleChangeInGetArticlesByCategoryId.resx">
+      <DependentUpon>202103141417167_littleChangeInGetArticlesByCategoryId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
