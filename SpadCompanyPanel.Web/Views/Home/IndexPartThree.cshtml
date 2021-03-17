@@ -175,13 +175,13 @@
                             </g>
                         </a>
             
-        @*<text id="res_tp3_title" class="res_tp3_title res_tp_title" fill="#FFFFFF"
-              transform="matrix(1 0 0 1 20 370)">شرکت زینو جم</text>
+        <text id="res_tp3_title" class="res_tp3_title res_tp_title" fill="#FFFFFF"
+              transform="matrix(1 0 0 1 20 370)">@Html.Raw(Model.Title)</text>
         <text id="res_tp3_subtitle" class="res_tp3_subtitle res_tp_subtitle" fill="#FFFFFF"
-              transform="matrix(1 0 0 1 50 410)"> انواع وسایل بهداشتی</text>
+              transform="matrix(1 0 0 1 50 410)">@Html.Raw(Model.ShortDescription)</text>
         <text id="res_tp3_subtitle2" class="res_tp3_subtitle res_tp_subtitle" fill="#FFFFFF"
-              transform="matrix(1 0 0 1 -45 435)">تولید انواع ماسک با کیفیت بالا</text>*@
-            @Html.Raw(Model.Description)
+              transform="matrix(1 0 0 1 -45 435)">@Html.Raw(Model.Description)</text>
+            
         <path class="st3" d="M-163.3,578.5" />
 
         <path class="st4" d="M511.3,566.6" />
@@ -227,7 +227,7 @@
                     <tr>
 
                         <td>
-                            @Html.Raw(Model.part2Description)
+                            @Html.Raw(Model.Part2ShortDescription)
                             @*<h2>
                                 3-2شرکت زینو جم یکی از بهترین <br />
                                 3-2شرکت های تولید کننده محصولات بهداشتی است
@@ -285,7 +285,7 @@
                 <table class="liquid_circular2_txt circle_txt hcenter">
                     <tr>
                         <td>
-                            @Html.Raw(Model.part3Description)
+                            @Html.Raw(Model.Part3ShortDescription)
                             @*<h2>
                                 زینو جم یکی از <br />
                                 3-3بهترین شرکت ها است
@@ -335,7 +335,7 @@
                     <tr>
 
                         <td>
-                            @Html.Raw(Model.part3Description)
+                            @Html.Raw(Model.Part2ShortDescription)
                             @*تولید انواع وسایل بهداشتی<br />
                             تولید انواع ماسک با کیفیت بالا*@
 
@@ -385,7 +385,7 @@
                     <tr>
 
                         <td>
-                            @Html.Raw(Model.part3Description)
+                            @Html.Raw(Model.Part3ShortDescription)
                             @*انواع وسایل بهداشتی<br />
                             انواع ماسک با کیفیت بالا*@
 
@@ -451,7 +451,7 @@
 
                 </svg>
         <ul dir="rtl" class="footer_txt footer3_txt">
-            @Html.Raw(Model.VideoDescriptions)
+            @Html.Raw(Model.VideoShortDescriptions)
             @*<li class="footer_txt1 footer3_txt1" id="footer3_txt1">
                 3بهترین شرکت تولید کننده محصولات بهداشتی
             </li>
@@ -493,7 +493,7 @@
 
         </div>
         <ul dir="rtl" class="res_footer2_txt res_footer_txt">
-            @Html.Raw(Model.VideoDescriptions)
+            @Html.Raw(Model.VideoShortDescriptions)
             @*<li class="res_footer2_txt1" id="footer2_txt1">
                 بهترین شرکت تولید کننده محصولات بهداشتی3
             </li>

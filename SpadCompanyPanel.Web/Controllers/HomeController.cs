@@ -226,10 +226,10 @@ namespace SpadCompanyPanel.Web.Controllers
                 ButtonLink = section1Cover.Link,
                 CoverImage = section1Cover.Image,
                 Part2Image = section1Part2.Image,
-                part2Description = section1Part2.ShortDescription,
-                part3Image = section1part3.Image,
-                part3Description = section1part3.ShortDescription,
-                VideoDescriptions = section1VideoDescription.ShortDescription,
+                Part2ShortDescription = section1Part2.ShortDescription,
+                Part3Image = section1part3.Image,
+                Part3ShortDescription = section1part3.ShortDescription,
+                VideoShortDescriptions = section1VideoDescription.ShortDescription,
                 Video = section1Video.Video
             };
 
@@ -251,10 +251,10 @@ namespace SpadCompanyPanel.Web.Controllers
                 ButtonLink = section2Cover.Link,
                 CoverImage = section2Cover.Image,
                 Part2Image = section2Part2.Image,
-                part2Description = section2Part2.ShortDescription,
-                part3Image = section2part3.Image,
-                part3Description = section2part3.ShortDescription,
-                VideoDescriptions = section2VideoDescription.ShortDescription,
+                Part2ShortDescription = section2Part2.ShortDescription,
+                Part3Image = section2part3.Image,
+                Part3ShortDescription = section2part3.ShortDescription,
+                VideoShortDescriptions = section2VideoDescription.ShortDescription,
                 Video = section2Video.Video
             };
 
@@ -277,10 +277,10 @@ namespace SpadCompanyPanel.Web.Controllers
                 ButtonLink = section3Cover.Link,
                 CoverImage = section3Cover.Image,
                 Part2Image = section3Part2.Image,
-                part2Description = section3Part2.ShortDescription,
-                part3Image = section3part3.Image,
-                part3Description = section3part3.ShortDescription,
-                VideoDescriptions = section3VideoDescription.ShortDescription,
+                Part2ShortDescription = section3Part2.ShortDescription,
+                Part3Image = section3part3.Image,
+                Part3ShortDescription = section3part3.ShortDescription,
+                VideoShortDescriptions = section3VideoDescription.ShortDescription,
                 Video = section3Video.Video
             };
 

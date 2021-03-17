@@ -4,6 +4,10 @@
         .tp_img1 {
             background-image: url(/Files/StaticContentImages/Image/@Model.CoverImage);
         }
+
+        .res_tp_img {
+            background-image: url(/Files/StaticContentImages/Image/@Model.CoverImage);
+        }
     </style>
 
 
@@ -247,7 +251,7 @@
                     <tr>
 
                         <td>
-                            @Html.Raw(Model.part2Description)
+                            @Html.Raw(Model.Part2ShortDescription)
                             @*<h2>
                                     بهترین شرکت<br />
                                     تولید کننده محصولات <br />
@@ -288,7 +292,7 @@
                                 
         <g id="content1_image2" style="clip-path: url(#clipping2);">
         <image id="image1_2" overflow="visible" width="6800" height="5200"
-               xlink:href="~/Files/StaticContentImages/Image/@Model.part3Image"
+               xlink:href="~/Files/StaticContentImages/Image/@Model.Part3Image"
                transform="matrix(0.3402 0 0 0.3402 -240 70)">
                             </image>
                         </g>
@@ -301,7 +305,7 @@
                     <tr>
 
                         <td>
-                            @Html.Raw(Model.part3Description)
+                            @Html.Raw(Model.Part3ShortDescription)
                         </td>
 
                     </tr>
@@ -351,7 +355,7 @@
                     <tr>
 
                         <td>
-                            @Html.Raw(Model.part2Description)
+                            @Html.Raw(Model.Part2ShortDescription)
                             @*بهترین شرکت<br />
                                 تولید کننده محصولات <br />
                                 بهداشتی و انواع ماسک*@
@@ -401,7 +405,7 @@
                     <tr>
 
                         <td>
-                            @Html.Raw(Model.part3Description)
+                            @Html.Raw(Model.Part3ShortDescription)
                             @*بهترین شرکت <br />
                                 تولید کننده محصولات<br />
                                 بهداشتی و انواع ماسک*@
@@ -488,7 +492,7 @@
                     </svg>
 
         @*<ul dir="rtl" class="footer_txt footer1_txt"></ul>*@
-        @Html.Raw(Model.VideoDescriptions)
+        @Html.Raw(Model.VideoShortDescriptions)
 
         <div class="play_btn vcenter" id="play_btn"></div>
 
@@ -521,7 +525,7 @@
 
             </div>
             <ul dir="rtl" class="res_footer1_txt res_footer_txt">
-                @Html.Raw(Model.VideoDescriptions)
+                @Html.Raw(Model.VideoShortDescriptions)
 
                 @*<li class="res_footer1_txt1" id="footer1_txt1">
                         بهترین شرکت تولید ماسک

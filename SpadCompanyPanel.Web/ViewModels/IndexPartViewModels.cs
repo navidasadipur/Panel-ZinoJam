@@ -18,14 +18,14 @@ namespace SpadCompanyPanel.Web.ViewModels
         public string CoverImage { get; set; }
 
         public string Part2Image { get; set; }
-        public string part2Description { get; set; }
+        public string Part2ShortDescription { get; set; }
 
-        public string part3Image { get; set; }
-        public string part3Description { get; set; }
+        public string Part3Image { get; set; }
+        public string Part3ShortDescription { get; set; }
         
         public string Video { get; set; }
 
         [AllowHtml]
-        public string VideoDescriptions { get; set; }
+        public string VideoShortDescriptions { get; set; }
     }
 }
