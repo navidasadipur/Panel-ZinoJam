@@ -10,7 +10,8 @@ namespace SpadCompanyPanel.Core.Utility
     {
         Slider = 1001,
         CompanyHistory = 2,
-        BlogImage = 1004
+        BlogImage = 1004,
+        FirstPageDetails = 1005
     }
     public enum StaticContents
     {

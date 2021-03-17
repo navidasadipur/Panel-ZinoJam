@@ -211,7 +211,7 @@ div{background-repeat: no-repeat;}
 	z-index: -1;
 	width: 80%;
 	height: 605px;
-	background-image: url(../img/1-1.jpg);
+	/*background-image: url(../img/1-1.jpg);*/
 	position: absolute;
 	bottom: 0px;
 	left:12%;

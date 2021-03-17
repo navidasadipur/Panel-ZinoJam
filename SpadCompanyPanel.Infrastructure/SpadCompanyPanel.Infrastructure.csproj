@@ -98,6 +98,10 @@
     <Compile Include="Migrations\202103151026508_RepositoriesPolishedAndCleaned.Designer.cs">
       <DependentUpon>202103151026508_RepositoriesPolishedAndCleaned.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103170811010_staticContentDetailShortDescriptionPropertyAddedAllowShortDescription.cs" />
+    <Compile Include="Migrations\202103170811010_staticContentDetailShortDescriptionPropertyAddedAllowShortDescription.Designer.cs">
+      <DependentUpon>202103170811010_staticContentDetailShortDescriptionPropertyAddedAllowShortDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202103151026508_RepositoriesPolishedAndCleaned.resx">
       <DependentUpon>202103151026508_RepositoriesPolishedAndCleaned.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103170811010_staticContentDetailShortDescriptionPropertyAddedAllowShortDescription.resx">
+      <DependentUpon>202103170811010_staticContentDetailShortDescriptionPropertyAddedAllowShortDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
