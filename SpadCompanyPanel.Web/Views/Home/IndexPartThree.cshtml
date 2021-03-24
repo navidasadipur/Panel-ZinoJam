@@ -1,5 +1,15 @@
 ﻿@model SpadCompanyPanel.Web.ViewModels.IndexPartViewModels
 
+    <style>
+        .res_tp_img3 {
+            background-image: url(/Files/StaticContentImages/Image/@Model.CoverImage);
+        }
+
+        .tp_img3 {
+            background-image: url(/Files/StaticContentImages/Image/@Model.CoverImage);
+        }
+    </style>
+
 
 <div id="top_page3" class="top_page fullpage full-top-3">
     <div class="mycontainer">
@@ -110,12 +120,12 @@
 
                             </g>
                         </a>
-            @Html.Raw(Model.Description)
-        @*<text id="tp3_title" class="tp3_title tp_title" fill="#FFFFFF" transform="matrix(1 0 0 1 390 340)">شرکت بهداشتی زینو جم</text>
+            
+        <text id="tp3_title" class="tp3_title tp_title" fill="#FFFFFF" transform="matrix(1 0 0 1 390 340)">@Html.Raw(Model.Title)</text>
         <text id="tp3_subtitle" class="tp3_subtitle tp_subtitle" fill="#FFFFFF"
-              transform="matrix(1 0 0 1 360 410)">زینو جم بهترین3</text>
+              transform="matrix(1 0 0 1 360 410)">@Html.Raw(Model.ShortDescription)</text>
         <text id="tp3_subtitle2" class="tp3_subtitle tp_subtitle" fill="#FFFFFF"
-              transform="matrix(1 0 0 1 170 450)">محصولات بهداشتی را تولید می کند3&zwnj; </text>*@
+              transform="matrix(1 0 0 1 170 450)">@Html.Raw(Model.Description)</text>
                     </svg>
         <div class="res_tp_img3 hcenter" id="res_tp_img3"></div>
         <svg version="1.1" id="res_tp_svg3" class="res_tp_svg res_tp_svg3" xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +225,7 @@
 
         <g id="content3_image1" style="clip-path: url(#clipping3_1);">
         <image id="image3_1" overflow="visible" width="5300" height="6600"
-               xlink:href="~/Content/client/wp-content/themes/uniqo/img/3-2.jpg"
+               xlink:href="~/Files/StaticContentImages/Image/@Model.Part2Image"
                transform="matrix(0.3402 0 0 0.3402 50 -300)">
                                 </image>
                             </g>
@@ -274,7 +284,7 @@
 
         <g id="content3_image2" style="clip-path: url(#clipping3_2);">
         <image id="image3_2" overflow="visible" width="7500" height="4500"
-               xlink:href="~/Content/client/wp-content/themes/uniqo/img/3-3.jpg"
+               xlink:href="~/Files/StaticContentImages/Image/@Model.Part3Image"
                transform="matrix(0.3402 0 0 0.3402 100 0)">
                             </image>
                         </g>
@@ -321,7 +331,7 @@
 
         <g id="res_content3_image1" style="clip-path: url(#res_clipping3_1);">
         <image overflow="visible" width="7000" height="4800"
-               xlink:href="~/Content/client/wp-content/themes/uniqo/img/3-2.jpg"
+               xlink:href="~/Files/StaticContentImages/Image/@Model.Part2Image"
                transform="matrix(0.3402 0 0 0.3402 -170 5)">
                     </image>
                 </g>
@@ -371,7 +381,7 @@
 
         <g id="res_content3_image2" style="clip-path: url(#res_clipping3_2);">
         <image overflow="visible" width="6200" height="7000"
-               xlink:href="~/Content/client/wp-content/themes/uniqo/img/3-3.jpg"
+               xlink:href="~/Files/StaticContentImages/Image/@Model.Part3Image"
                transform="matrix(0.3402 0 0 0.3402 320 -440)">
                     </image>
 
@@ -388,8 +398,6 @@
                             @Html.Raw(Model.Part3ShortDescription)
                             @*انواع وسایل بهداشتی<br />
                             انواع ماسک با کیفیت بالا*@
-
-
                         </td>
 
                     </tr>

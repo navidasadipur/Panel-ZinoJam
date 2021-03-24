@@ -418,7 +418,7 @@ $(function(){
 
   });
     $('#draggable_iron').mouseout(function(e){
-        $(".after_drag").attr("src", "~/Content/client/wp-content/themes/uniqo/img/1-1-1.png");
+        $(".after_drag").attr("src", "/Content/client/wp-content/themes/uniqo/img/1-1-1.png");
         $(".draggable_iron2").css("display", "none")
     });
 

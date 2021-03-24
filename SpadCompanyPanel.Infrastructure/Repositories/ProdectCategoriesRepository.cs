@@ -20,7 +20,19 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
 
         public List<ProductCategory> GetAllProductCategories()
         {
-            return _context.ProductCategories.Where(a => a.IsDeleted == false).Include(g => g.Products ).OrderByDescending(a => a.InsertDate).ToList();
+
+
+            var allCategories = _context.ProductCategories.Where(a => a.IsDeleted == false).OrderByDescending(a => a.InsertDate).ToList();
+
+            foreach (var category in allCategories)
+            {
+                var categoryProducts = _context.Products.Where(p => p.ProductCategoryId == category.Id & p.IsDeleted == false).ToList();
+                category.Products.Concat(categoryProducts);
+            }
+            //var notDeletedProducts = allCategories.Select(c => c.Products.Where(p => p.IsDeleted == false)).ToList();
+
+
+            return allCategories;
         }
 
         //public List<GalleryCategory> GetGalleryCategories()
