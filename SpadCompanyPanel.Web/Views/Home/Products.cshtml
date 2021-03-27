@@ -2,7 +2,8 @@
 @{
     ViewBag.Title = "محصولات";
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+
+    var productCount = 1;
 }
 
 <div id="parent-page" class="parent-page">
@@ -23,24 +24,23 @@
         {
             <h1 class="page-title">@ViewBag.CategoryTitle</h1>
         }
+    <div class="row">
+        @foreach (var product in Model.Products)
+        {
+            <div class="col-md-4 col-xs-12">
+                <div class="products">
+                    <img src="~/Files/ProductImages/@product.Image" alt="@product.Title">
+                    <h2 class="product-title">
+                        @product.Title
+                    </h2>
+                </div>
+            </div>
+        }
 
-        <div class="row">
-            @foreach (var product in Model.Products)
-            {
-                    <div class="col-md-4 col-xs-12">
-                        <div class="products">
-                            <img src="~/Files/ProductImages/@product.Image" alt="@product.Title">
-                            <h2 class="product-title">
-                                @product.Title
-                            </h2>
-                        </div>
-                    </div>
-            }
-
+    </div>
         </div>
 
 
     </div>
 
 
-</div>
