@@ -2146,30 +2146,6 @@
     <Content Include="Content\client\wp-content\themes\uniqo\js\simplebar.js" />
     <Content Include="Content\client\wp-content\themes\uniqo\style-rtl20b9.html" />
     <Content Include="Content\client\wp-content\themes\uniqo\style20b9.css" />
-    <Content Include="Content\client\wp-content\uploads\02\ArometherapyWOrkshop.jpg" />
-    <Content Include="Content\client\wp-content\uploads\04\botanicaccenttowels.target.3.jpg" />
-    <Content Include="Content\client\wp-content\uploads\04\DSC02443-1024x680.jpg" />
-    <Content Include="Content\client\wp-content\uploads\06\ironing-105680535-5a985c4b3037130036bd3e06.jpg" />
-    <Content Include="Content\client\wp-content\uploads\06\laundromat-12830795.jpg" />
-    <Content Include="Content\client\wp-content\uploads\07\58e4f7808af57801018b6772-750-563.jpg" />
-    <Content Include="Content\client\wp-content\uploads\07\Baby-Laundry-Guidelines1.jpg" />
-    <Content Include="Content\client\wp-content\uploads\07\Depositphotos_183642996_m-2015.jpg" />
-    <Content Include="Content\client\wp-content\uploads\07\earthfriendly.jpg" />
-    <Content Include="Content\client\wp-content\uploads\07\lavar-roupas.jpg" />
-    <Content Include="Content\client\wp-content\uploads\07\Wash-Your-Workout-Clothes-Step-12.jpg" />
-    <Content Include="Content\client\wp-content\uploads\08\article-10-is-your-laundry-really-clean.jpg" />
-    <Content Include="Content\client\wp-content\uploads\09\bright-white-sofa.jpg" />
-    <Content Include="Content\client\wp-content\uploads\09\new-clothes-wash-before-wear-today-stock-tease-150519_3663d4c3d88b718f39fb75cc97a8e692.jpg" />
-    <Content Include="Content\client\wp-content\uploads\10\clothes-for-skinny-girls048.jpg" />
-    <Content Include="Content\client\wp-content\uploads\10\how_to_wash_linen_002-1024x683.jpg" />
-    <Content Include="Content\client\wp-content\uploads\10\king-size-satin-sheets-silk-quilt-red-cotton-solid-duvet-cover-set-or-white-co-review-pink-bedding-sets-super-queen-full-twin-luxury-duv.jpg" />
-    <Content Include="Content\client\wp-content\uploads\10\seaside-tones-oversized-green-dress.jpg" />
-    <Content Include="Content\client\wp-content\uploads\10\static-electricity.jpg" />
-    <Content Include="Content\client\wp-content\uploads\10\Stocksy_txp9166771figY100_Medium_1364075-59554cc13df78cdc29feaedd.jpg" />
-    <Content Include="Content\client\wp-content\uploads\11\040518_Laundry.jpg" />
-    <Content Include="Content\client\wp-content\uploads\11\Care-Label-14867886_xxl.jpg" />
-    <Content Include="Content\client\wp-content\uploads\11\fabric-softner2.jpg" />
-    <Content Include="Content\client\wp-content\uploads\11\how-to-hand-wash-clothing-when-travelling-cover.jpg" />
     <Content Include="Content\client\wp-content\uploads\2018\02\161-chand-nokte-baraye-mortaghebat-az-lebashaye-pashmi-499x348.jpg" />
     <Content Include="Content\client\wp-content\uploads\2018\02\162-nokati-dar-zamine-shostan-anvae-chador-ha-499x348.jpg" />
     <Content Include="Content\client\wp-content\uploads\2018\02\165-hefz-behdasht-dam-koni-bereng-499x348.jpg" />
@@ -5277,6 +5253,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\client\wp-content\uploads\02\" />
+    <Folder Include="Content\client\wp-content\uploads\04\" />
+    <Folder Include="Content\client\wp-content\uploads\06\" />
+    <Folder Include="Content\client\wp-content\uploads\07\" />
+    <Folder Include="Content\client\wp-content\uploads\08\" />
+    <Folder Include="Content\client\wp-content\uploads\09\" />
+    <Folder Include="Content\client\wp-content\uploads\10\" />
+    <Folder Include="Content\client\wp-content\uploads\11\" />
     <Folder Include="Files\ArticleImages\Temp\" />
     <Folder Include="Files\CertificatesImages\Temp\" />
     <Folder Include="Files\FoodImages\Temp\" />

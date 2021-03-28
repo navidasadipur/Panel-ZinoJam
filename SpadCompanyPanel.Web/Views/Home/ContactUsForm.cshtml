@@ -109,34 +109,37 @@
                 <div class="col-md-6 col-xs-12">
 
                 </div>
-                <div class="col-md-12">
-                    <h2 style="color: #c4161c;
-                            margin-bottom: 20px;
-                            font-weight: bold;">
-                        ارسال پیام برای ما
-                    </h2>
+
                     @using (Html.BeginForm("contactUsForm", "home", FormMethod.Post, new { id = "form" }))
                     {
                         @Html.AntiForgeryToken()
 
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                        <div class=" row form-inline">
-                            <div class="form-group col-md-12">
-                                <div class="col-md-6">
-                                    <div class="row">
-                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "custom-inpt inpt-50", placeholder = "نام و نام خانوادگی" } })
-                                </div>
-                                    <div class="row">
-                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger " })
-                                        </div>
-                                    </div>
-                                <div class="fol-md-6">
-                                @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "custom-inpt inpt-50", placeholder = "ایمیل خود را وارد کنید" } })
 
+                        <div class="col-md-12">
+                        <h2 style="color: #c4161c;
+                                margin-bottom: 20px;
+                                font-weight: bold;">
+                            ارسال پیام برای ما
+                        </h2>
+                        @*<div class=" row form-inline">*@
+                            @*<div class="form-group col-md-12">*@
+                                    @*<div class="row">*@
+                                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "custom-inpt inpt-50", placeholder = "نام و نام خانوادگی" } })
+                                    @*</div>
+                                    <div class="row">*@
+                                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                                    @*</div>*@
+                            @*<div class="row">*@
+                            @Html.EditorFor(model => model.CustomerEmail, new { htmlAttributes = new { @class = "custom-inpt inpt-50", placeholder = "ایمیل خود را وارد کنید" } })                              
+                         @*</div>
+                                    <div class="row">*@
                                     @Html.ValidationMessageFor(model => model.CustomerEmail, "", new { @class = "text-danger " })
-                                    </div>
-                            </div>
-                            </div>
+
+                                @*</div>*@
+                            @*</div>*@
+                         @*</div>*@
                         <div class="form-group">
                             @Html.TextAreaFor(model => model.Message, new { placeholder = "متن مورد نظر را وارد کنید", rows = "5", @class = "contact-textarea" })
                             @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
@@ -145,14 +148,14 @@
                             <input type="text" placeholder="ایمیل خود را وارد کنید" class="custom-inpt inpt-50">
                             <textarea placeholder="متن مورد نظر را وارد کنید" class="contact-textarea"></textarea>*@
                         <input type="submit" value="تایید" class="contact-submit">
+                    </div>
 
                     }
-                </>
-            </div>
-        </div>
 
+            </div>
 
     </div>
+</div>
 </div>
 
 @*<script>
