@@ -150,6 +150,7 @@ namespace SpadCompanyPanel.Web.Controllers
             footerContent.Address = _contentRepo.Get((int) StaticContents.Address);
             footerContent.Phone = _contentRepo.Get((int) StaticContents.Phone);
             footerContent.SupportPhone = _contentRepo.Get((int)StaticContents.SupportPhone);
+            footerContent.ShortDescription = _contentRepo.GetContentByTypeId((int)StaticContentTypes.CompanyHistory).FirstOrDefault();
             footerContent.Youtube = _contentRepo.Get((int) StaticContents.Youtube);
             footerContent.Instagram = _contentRepo.Get((int) StaticContents.Instagram);
             footerContent.Twitter = _contentRepo.Get((int) StaticContents.Twitter);

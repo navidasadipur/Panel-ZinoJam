@@ -22,11 +22,11 @@
 
 
         </svg>
-        <div class="about_content_box" id="about_content_box" style="margin-top: -24px; top: 0px;">
+        <div class="about_content_box" id="about_content_box" @*style="margin-top: -24px; top: 0px;"*@>
             <div class="content_container" style="min-height: 33vh">
                 <div class="about_txt" dir="rtl" >
-                    <p style="font-family: 'Vazir'!important;">
-                        @Model.AboutDescription
+                    <p style="/*font-family: 'Vazir'!important;*/ padding: 0 300px;">
+                        @Html.Raw(Model.AboutDescription)
                     </p>
                 </div>
             </div>
