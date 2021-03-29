@@ -4,6 +4,11 @@
     ViewBag.Title = "درباره ما";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+    <style>
+        div.about_txt{
+            padding: 0 300px;
+        }
+    </style>
 @*@Html.Action("CompanyHistory","Home")
     @Html.Action("Testimonials","Home")
     @Html.Action("LatestArticlesSection","Blog")*@
@@ -20,12 +25,11 @@
         c-274.333,182.135-748.858,376.056-1218.97,201.561C37.478,989.012-389.261,397.365-190.357,164.664
         c250.658-293.256,783.904-4.246,1159.274-21.051C1344.288,126.81,1761.647-79.532,2071.035,166.824z"></path>
 
-
         </svg>
         <div class="about_content_box" id="about_content_box" @*style="margin-top: -24px; top: 0px;"*@>
             <div class="content_container" style="min-height: 33vh">
                 <div class="about_txt" dir="rtl" >
-                    <p style="/*font-family: 'Vazir'!important;*/ padding: 0 300px;">
+                    <p >
                         @Html.Raw(Model.AboutDescription)
                     </p>
                 </div>

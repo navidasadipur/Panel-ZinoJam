@@ -85,7 +85,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            _repo.Delete(id);
+            _repo.DeleteCategoryAndItsProducts(id);
             return RedirectToAction("Index");
         }
     }

@@ -1,4 +1,11 @@
 ﻿@model List<SpadCompanyPanel.Web.ViewModels.LatestArticlesViewModel>
+
+<style>
+    .latest-blog {
+        font-family: 'BNazanin';
+    }
+</style>
+
 @if (Model.Any())
 {
 
@@ -14,12 +21,14 @@
     {
         <div class="latest-blog">
             <div class="d-inline-block">
-                <a href="/Blog/Post/@Model[i].Id">                  @*/@Model[i].Title.Replace(" ","-")*@
-                                <img src="/Files/ArticleImages/Image/@Model[i].Image" alt="@Model[i].Title" class="latest-blog-img">
-                            </a>
+                <a href="/Blog/Post/@Model[i].Id">
+                    @*/@Model[i].Title.Replace(" ","-")*@
+                    <img src="/Files/ArticleImages/Image/@Model[i].Image" alt="@Model[i].Title" class="latest-blog-img">
+                </a>
             </div>
             <div class="latest-blog-title">
-                <a href="/Blog/Post/@Model[i].Id">                    @*/@Model[i].Title.Replace(" ", "-")*@
+                <a href="/Blog/Post/@Model[i].Id">
+                    @*/@Model[i].Title.Replace(" ", "-")*@
                     <p>@Model[i].Title</p>
                 </a>
                 <span>
@@ -30,75 +39,72 @@
     }
 }
 
-    <!-- article 1 -->
-
-
-
-    @*<div class="latest-blog">
-            <div class="d-inline-block">
-                <a href="blog-details.html">
-                    <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog1.jpg" class="latest-blog-img" alt="">
-                </a>
-            </div>
-            <div class="latest-blog-title">
-                <a href="blog-details.html">
-                    <p>هر آنچه باید درباره ما بدانید</p>
-                </a>
-                <span>
-                    4 بهمن 1399
-                </span>
-            </div>
+<!-- article 1 -->
+@*<div class="latest-blog">
+        <div class="d-inline-block">
+            <a href="blog-details.html">
+                <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog1.jpg" class="latest-blog-img" alt="">
+            </a>
         </div>
-        <div class="latest-blog">
-            <div class="d-inline-block">
-                <a href="blog-details.html">
-                    <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog2.jpg" class="latest-blog-img" alt="">
-                </a>
-            </div>
-            <div class="latest-blog-title">
-                <a href="blog-details.html">
-                    <p>هر آنچه باید درباره ما بدانید</p>
-                </a>
-                <span>
-                    4 بهمن 1399
-                </span>
-            </div>
+        <div class="latest-blog-title">
+            <a href="blog-details.html">
+                <p>هر آنچه باید درباره ما بدانید</p>
+            </a>
+            <span>
+                4 بهمن 1399
+            </span>
         </div>
-        <div class="latest-blog">
-            <div class="d-inline-block">
-                <a href="blog-details.html">
-                    <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog3.jpg" class="latest-blog-img" alt="">
-                </a>
-            </div>
-            <div class="latest-blog-title">
-                <a href="blog-details.html">
-                    <p>هر آنچه باید درباره ما بدانید</p>
-                </a>
-                <span>
-                    4 بهمن 1399
-                </span>
-            </div>
+    </div>
+    <div class="latest-blog">
+        <div class="d-inline-block">
+            <a href="blog-details.html">
+                <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog2.jpg" class="latest-blog-img" alt="">
+            </a>
         </div>
-        <div class="latest-blog">
-            <div class="d-inline-block">
-                <a href="blog-details.html">
-                    <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog4.jpg" class="latest-blog-img" alt="">
-                </a>
-            </div>
-            <div class="latest-blog-title">
-                <a href="blog-details.html">
-                    <p>هر آنچه باید درباره ما بدانید</p>
-                </a>
-                <span>
-                    4 بهمن 1399
-                </span>
-            </div>
-        </div>*@
+        <div class="latest-blog-title">
+            <a href="blog-details.html">
+                <p>هر آنچه باید درباره ما بدانید</p>
+            </a>
+            <span>
+                4 بهمن 1399
+            </span>
+        </div>
+    </div>
+    <div class="latest-blog">
+        <div class="d-inline-block">
+            <a href="blog-details.html">
+                <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog3.jpg" class="latest-blog-img" alt="">
+            </a>
+        </div>
+        <div class="latest-blog-title">
+            <a href="blog-details.html">
+                <p>هر آنچه باید درباره ما بدانید</p>
+            </a>
+            <span>
+                4 بهمن 1399
+            </span>
+        </div>
+    </div>
+    <div class="latest-blog">
+        <div class="d-inline-block">
+            <a href="blog-details.html">
+                <img src="~/Content/client/wp-content/themes/uniqo/img/LatestBlog4.jpg" class="latest-blog-img" alt="">
+            </a>
+        </div>
+        <div class="latest-blog-title">
+            <a href="blog-details.html">
+                <p>هر آنچه باید درباره ما بدانید</p>
+            </a>
+            <span>
+                4 بهمن 1399
+            </span>
+        </div>
+    </div>*@
 
 
 
 
-    @*<section class="section-padding our-blog restaurent-ad">
+@*<section class="section-padding our-blog restaurent-ad">
         <div class="container">
             <div class="section-header-style-2">
                 <h6 class="text-light-green sub-title">بلاگ ما</h6>

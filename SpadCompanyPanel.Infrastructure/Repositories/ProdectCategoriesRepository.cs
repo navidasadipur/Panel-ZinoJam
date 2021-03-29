@@ -35,20 +35,48 @@ namespace SpadCompanyPanel.Infrastructure.Repositories
             return allCategories;
         }
 
-        //public List<GalleryCategory> GetGalleryCategories()
-        //{
-        //    return _context. /* Galleries.Where(a => a.IsDeleted == false).ToList();*/
-        //}
+        public void DeleteCategoryAndItsProducts(int id)
+        {
+            //finding all ids of products of this category
+            var productIds = _context.Products.Where(p => p.ProductCategoryId == id && p.IsDeleted == false).Select(p => p.Id).ToList();
+
+            if (productIds == null)
+            {
+                return;
+            }
+
+            //delete all products
+            foreach (var productId in productIds)
+            {
+
+                var productEntity = _context.Products.FirstOrDefault(p => p.Id == productId);
+
+                productEntity.IsDeleted = true;
+
+                _context.Entry(productEntity).State = EntityState.Modified;
+
+                _context.SaveChanges();
+
+                _logger.LogEvent(productEntity.GetType().Name, productEntity.Id, "Delete");
+            }
 
 
-        //public Cover GetFirstCover()
-        //{
-        //    return _context.Covers.FirstOrDefault(c => c.IsDeleted == false);
-        //}
+            //delete category
+            var categoryEntity = _context.ProductCategories.FirstOrDefault(c => c.Id == id && c.IsDeleted == false);
 
-        //public string GetArticleName(int articleId)
-        //{
-        //    return _context.Articles.Find(articleId).Title;
-        //}
+            if (categoryEntity == null)
+            {
+                return;
+            }
+
+            categoryEntity.IsDeleted = true;
+
+            _context.Entry(categoryEntity).State = EntityState.Modified;
+
+            _context.SaveChanges();
+
+            _logger.LogEvent(categoryEntity.GetType().Name, categoryEntity.Id, "Delete");
+        }
+
     }
 }

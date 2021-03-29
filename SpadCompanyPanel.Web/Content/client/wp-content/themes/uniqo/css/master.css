@@ -33,6 +33,14 @@
     font-weight: 600;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'BNazanin';
+    src: url('fonts/vazir/BNazanin.eot') format('embedded-opentype'), 
+         url('fonts/vazir/BNazanin.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
 /*@font-face {
     font-family: 'Vazir';
     src: url('fonts/gotham-ultra-webfont.eot');
@@ -59,6 +67,9 @@ body{
     padding:0px;
 } 
 
+footer{
+    font-family: 'BNazanin'!important;
+}
 
 
 #mainBody{ 
