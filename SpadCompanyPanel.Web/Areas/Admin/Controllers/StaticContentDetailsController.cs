@@ -57,6 +57,8 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                         image = new ImageResizer(1020, 700, true);
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.CompanyHistory)
                         image = new ImageResizer(1000, 1000, true);
+                    if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.FirstPageDetails)
+                        image = new ImageResizer(2400, 2000, true);
 
                     image.Resize(Server.MapPath("/Files/StaticContentImages/Temp/" + newFileName),
                         Server.MapPath("/Files/StaticContentImages/Image/" + newFileName));
@@ -113,6 +115,8 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                         image = new ImageResizer(1020, 700, true);
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.CompanyHistory)
                         image = new ImageResizer(1000, 1000, true);
+                    if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.FirstPageDetails)
+                        image = new ImageResizer(2400, 2000, true);
 
                     image.Resize(Server.MapPath("/Files/StaticContentImages/Temp/" + newFileName),
                         Server.MapPath("/Files/StaticContentImages/Image/" + newFileName));

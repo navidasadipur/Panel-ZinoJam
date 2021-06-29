@@ -22,9 +22,12 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
     public class UsersController : Controller
     {
         private readonly UsersRepository _repo;
-        public UsersController(UsersRepository repo)
+        private readonly LogsRepository _logsRepository;
+
+        public UsersController(UsersRepository repo, LogsRepository logsRepository)
         {
             _repo = repo;
+            this._logsRepository = logsRepository;
         }
 
         // GET: Users
@@ -236,7 +239,14 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
+            var currentUser = _logsRepository.GetCurrentUser();
+
             var user = _repo.GetUser(id);
+
+            if (currentUser.Id == user.Id)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
 
             #region Delete User Avatar
             if (user.Avatar != null)

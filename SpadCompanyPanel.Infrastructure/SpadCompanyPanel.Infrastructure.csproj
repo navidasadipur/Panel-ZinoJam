@@ -70,6 +70,50 @@
     <Compile Include="Migrations\202012210849043_Initial.Designer.cs">
       <DependentUpon>202012210849043_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202103060650281_enumChanged-UtilityFolder.cs" />
+    <Compile Include="Migrations\202103060650281_enumChanged-UtilityFolder.Designer.cs">
+      <DependentUpon>202103060650281_enumChanged-UtilityFolder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.cs" />
+    <Compile Include="Migrations\202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.Designer.cs">
+      <DependentUpon>202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103070725274_ProductRepositoryAndProductsAreChanged.cs" />
+    <Compile Include="Migrations\202103070725274_ProductRepositoryAndProductsAreChanged.Designer.cs">
+      <DependentUpon>202103070725274_ProductRepositoryAndProductsAreChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103080936480_IndexPartialsModelAndRepositoryAdded.cs" />
+    <Compile Include="Migrations\202103080936480_IndexPartialsModelAndRepositoryAdded.Designer.cs">
+      <DependentUpon>202103080936480_IndexPartialsModelAndRepositoryAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103140732142_videoRepositoryBugFixed.cs" />
+    <Compile Include="Migrations\202103140732142_videoRepositoryBugFixed.Designer.cs">
+      <DependentUpon>202103140732142_videoRepositoryBugFixed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103141417167_littleChangeInGetArticlesByCategoryId.cs" />
+    <Compile Include="Migrations\202103141417167_littleChangeInGetArticlesByCategoryId.Designer.cs">
+      <DependentUpon>202103141417167_littleChangeInGetArticlesByCategoryId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103151026508_RepositoriesPolishedAndCleaned.cs" />
+    <Compile Include="Migrations\202103151026508_RepositoriesPolishedAndCleaned.Designer.cs">
+      <DependentUpon>202103151026508_RepositoriesPolishedAndCleaned.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103170811010_staticContentDetailShortDescriptionPropertyAddedAllowShortDescription.cs" />
+    <Compile Include="Migrations\202103170811010_staticContentDetailShortDescriptionPropertyAddedAllowShortDescription.Designer.cs">
+      <DependentUpon>202103170811010_staticContentDetailShortDescriptionPropertyAddedAllowShortDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202103291104369_MethodDeleteCategoryAndItsProducts.cs" />
+    <Compile Include="Migrations\202103291104369_MethodDeleteCategoryAndItsProducts.Designer.cs">
+      <DependentUpon>202103291104369_MethodDeleteCategoryAndItsProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106271211306_addKeyAnnotationToRolePermition.cs" />
+    <Compile Include="Migrations\202106271211306_addKeyAnnotationToRolePermition.Designer.cs">
+      <DependentUpon>202106271211306_addKeyAnnotationToRolePermition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106271219309_addKeyAnnotationToRolePermition2.cs" />
+    <Compile Include="Migrations\202106271219309_addKeyAnnotationToRolePermition2.Designer.cs">
+      <DependentUpon>202106271219309_addKeyAnnotationToRolePermition2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MyDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,22 +122,18 @@
     <Compile Include="Repositories\ArticleHeadLinesRepository.cs" />
     <Compile Include="Repositories\ArticlesRepositoriy.cs" />
     <Compile Include="Repositories\AuthRepsitory.cs" />
-    <Compile Include="Repositories\CertificatesRepository.cs" />
     <Compile Include="Repositories\ContactFormsRepository.cs" />
-    <Compile Include="Repositories\FaqRepository.cs" />
     <Compile Include="Repositories\GalleriesRepository.cs" />
     <Compile Include="Repositories\GalleryVideosRepository.cs" />
+    <Compile Include="Repositories\HomePartialRepository.cs" />
     <Compile Include="Repositories\LogsRepository.cs" />
-    <Compile Include="Repositories\OurTeamRepository.cs" />
-    <Compile Include="Repositories\ProjectGalleriesRepository.cs" />
-    <Compile Include="Repositories\ProjectsRepository.cs" />
-    <Compile Include="Repositories\ProjectTypesRepository.cs" />
+    <Compile Include="Repositories\ProdectCategoriesRepository.cs" />
     <Compile Include="Repositories\ServiceIncludesRepository.cs" />
     <Compile Include="Repositories\ServicesRepository.cs" />
     <Compile Include="Repositories\StaticContentDetailsRepository.cs" />
     <Compile Include="Repositories\StaticContentsRepository.cs" />
     <Compile Include="Repositories\StaticContentTypes.cs" />
-    <Compile Include="Repositories\TestimonialsRepository.cs" />
+    <Compile Include="Repositories\ProductsRepository.cs" />
     <Compile Include="Repositories\UsersRepository.cs" />
     <Compile Include="Seed.cs" />
   </ItemGroup>
@@ -110,6 +150,39 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202012210849043_Initial.resx">
       <DependentUpon>202012210849043_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103060650281_enumChanged-UtilityFolder.resx">
+      <DependentUpon>202103060650281_enumChanged-UtilityFolder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.resx">
+      <DependentUpon>202103061202451_productModelAndProductCategoryModelAndtheirRepositoriesAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103070725274_ProductRepositoryAndProductsAreChanged.resx">
+      <DependentUpon>202103070725274_ProductRepositoryAndProductsAreChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103080936480_IndexPartialsModelAndRepositoryAdded.resx">
+      <DependentUpon>202103080936480_IndexPartialsModelAndRepositoryAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103140732142_videoRepositoryBugFixed.resx">
+      <DependentUpon>202103140732142_videoRepositoryBugFixed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103141417167_littleChangeInGetArticlesByCategoryId.resx">
+      <DependentUpon>202103141417167_littleChangeInGetArticlesByCategoryId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103151026508_RepositoriesPolishedAndCleaned.resx">
+      <DependentUpon>202103151026508_RepositoriesPolishedAndCleaned.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103170811010_staticContentDetailShortDescriptionPropertyAddedAllowShortDescription.resx">
+      <DependentUpon>202103170811010_staticContentDetailShortDescriptionPropertyAddedAllowShortDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202103291104369_MethodDeleteCategoryAndItsProducts.resx">
+      <DependentUpon>202103291104369_MethodDeleteCategoryAndItsProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106271211306_addKeyAnnotationToRolePermition.resx">
+      <DependentUpon>202106271211306_addKeyAnnotationToRolePermition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106271219309_addKeyAnnotationToRolePermition2.resx">
+      <DependentUpon>202106271219309_addKeyAnnotationToRolePermition2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

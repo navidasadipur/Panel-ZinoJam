@@ -101,7 +101,7 @@ namespace SpadCompanyPanel.Web.ViewModels
             this.ShortDescription = article.ShortDescription;
             this.Author = article.User != null ? $"{article.User.FirstName} {article.User.LastName}" : "-";
             this.Image = article.Image;
-            this.AuthorAvatar = article.User.Avatar ?? "user-avatar.png";
+            //this.AuthorAvatar = article.User.Avatar ?? "user-avatar.png";
             this.PersianDate = article.AddedDate != null ? new PersianDateTime(article.AddedDate.Value).ToString("d MMMM yyyy") : "-";
         }
         public int Id { get; set; }
@@ -110,8 +110,9 @@ namespace SpadCompanyPanel.Web.ViewModels
         public string Image { get; set; }
         public string PersianDate { get; set; }
         public string Author { get; set; }
-        public string AuthorAvatar { get; set; }
+        //public string AuthorAvatar { get; set; }
         public string Role { get; set; }
+        public int CommentCounter { get; set; }
     }
 
     public class ArticleCategoriesViewModel
@@ -144,6 +145,7 @@ namespace SpadCompanyPanel.Web.ViewModels
         public string Description { get; set; }
         public string Author { get; set; }
         public string PersianDate { get; set; }
+        public string SubTitles { get; set; }
         public List<ArticleTag> Tags { get; set; }
         public List<ArticleCommentViewModel> ArticleComments { get; set; }
         public CommentFormViewModel CommentForm { get; set; }

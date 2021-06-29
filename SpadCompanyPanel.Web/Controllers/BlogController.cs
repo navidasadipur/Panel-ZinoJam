@@ -26,7 +26,7 @@ namespace SpadCompanyPanel.Web.Controllers
         [Route("Blog/{id}/{title}")]
         public ActionResult Index(int? id = null,string searchString = null)
         {
-            ViewBag.BlogImage = _contentRepo.GetStaticContentDetail((int) StaticContents.BlogImage).Image;
+            //ViewBag.BlogImage = _contentRepo.GetStaticContentDetail((int) StaticContents.BlogImage).Image;
             var articles = new List<Article>();
             if (id == null)
             {
@@ -34,10 +34,12 @@ namespace SpadCompanyPanel.Web.Controllers
                 if (!string.IsNullOrEmpty(searchString))
                 {
                     ViewBag.BreadCrumb = $"جستجو {searchString}";
-                    articles = articles.Where(a =>
-                        a.Title.ToLower().Trim().Contains(searchString.ToLower().Trim()) || a.ShortDescription.ToLower()
-                            .Trim().Contains(searchString.ToLower().Trim()) || a.Description.ToLower()
-                            .Trim().Contains(searchString.ToLower().Trim()) || a.ArticleTags.Any(t=>t.Title.ToLower().Trim().Contains(searchString.ToLower().Trim()))).ToList();
+                    articles = articles
+                        .Where(a => a.Title != null && a.Title.ToLower().Trim().Contains(searchString.ToLower().Trim()) || 
+                            a.ShortDescription != null && a.ShortDescription.ToLower().Trim().Contains(searchString.ToLower().Trim()) || 
+                            a.Description != null && a.Description.ToLower().Trim().Contains(searchString.ToLower().Trim()) || 
+                            a.ArticleTags != null && a.ArticleTags
+                                .Any( t => t.Title != null && t.Title.ToLower().Trim().Contains(searchString.ToLower().Trim()))).ToList();
                 }
             }
             else
@@ -45,6 +47,7 @@ namespace SpadCompanyPanel.Web.Controllers
                 var category = _articlesRepo.GetCategory(id.Value);
                 if (category != null)
                 {
+                    ViewBag.CategoryId = id.Value;
                     ViewBag.BreadCrumb = category.Title;
                     articles = _articlesRepo.GetArticlesByCategory(id.Value);
                 }
@@ -55,25 +58,16 @@ namespace SpadCompanyPanel.Web.Controllers
             {
                 var vm = new ArticleListViewModel(item);
                 vm.Role = _articlesRepo.GetAuthorRole(item.UserId);
+                if (item.ArticleComments != null)
+                {
+                    vm.CommentCounter = item.ArticleComments.Count();
+                }
                 articlelistVm.Add(vm);
             }
             return View(articlelistVm);
         }
 
-        public ActionResult TopArticlesSection(int? take = null)
-        {
-            var getCount = 4;
-            if (take != null)
-                getCount = take.Value;
 
-            var articles = _articlesRepo.GetTopArticles(getCount);
-            var vm = new List<TopArticlesViewModel>();
-            foreach (var item in articles)
-            {
-                vm.Add(new TopArticlesViewModel(item));
-            }
-            return PartialView(vm);
-        }
         public ActionResult ArticleCategoriesSection()
         {
             var categories = _articlesRepo.GetArticleCategories();
@@ -88,7 +82,7 @@ namespace SpadCompanyPanel.Web.Controllers
             }
             return PartialView(articleCategoriesVm);
         }
-        [Route("Blog/Post/{id}/{title}")]
+        [Route("Blog/Post/{id}")]
         public ActionResult Details(int id)
         {
             _articlesRepo.UpdateArticleViewCount(id);
@@ -122,7 +116,10 @@ namespace SpadCompanyPanel.Web.Controllers
                 _articlesRepo.AddComment(comment);
                 return RedirectToAction("ContactUsSummary", "Home");
             }
-            return RedirectToAction("Details", new { id = form.ArticleId });
+
+            var postTitle = _articlesRepo.Get(form.ArticleId).Title;
+
+            return RedirectToAction("Post", new { id = form.ArticleId });
         }
 
         public ActionResult LatestArticlesSection()

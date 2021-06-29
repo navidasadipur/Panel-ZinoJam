@@ -1,102 +1,185 @@
-﻿<header class="main-header">
-    <div class="header-navigation sticky-nav shadow">
+﻿ @model SpadCompanyPanel.Web.ViewModels.NavbarViewModel
+
+<div class="main_navbar">
+    <nav class="navbar navbar-fixed-top navbar-softlan">
         <div class="container-fluid">
-            <div class="row">
-                <!-- Logo Start -->
-                <div class="col-xl-1 col-md-2 col-sm-3 mt-1">
-                    <div class="logo">
-                        <a href="/"><img class="img-fluid" src="/Content/client/img/logo.jpg" alt="logo"></a>
-                    </div>
-                </div>
-                <!-- Logo End -->
-                <!-- Navigation Start -->
-                <div class="col-xl-11 col-md-10 col-sm-9">
-                    <!--Main Navigation Start -->
-                    <div class="main-navigation d-none d-lg-block">
-                        <ul>
-                            <li><a href="/">صفحه اصلی</a></li>
-                            <li><a href="/Gallery">گالری</a></li>
-                            <li><a href="/AboutUs">درباره ما</a></li>
-
-                            <li class="menu-dropdown">
-                                <a href="/Blog">
-                                    بلاگ
-                                </a>
-
-                            </li>
-                            <li><a href="/ContactUs">تماس با ما</a></li>
-                            <li><a href="/OurTeam">مدیران</a></li>
-                            <li><a href="/Certificates">گواهینامه ها</a></li>
-                            <li><a href="/Foods">غذا ها</a></li>
-                        </ul>
-                    </div>
-                    <!--Main Navigation End -->
-                    <!--Header Bottom Account Start -->
-                    <div class="header_account_area">
-                        <!--Seach Area Start -->
-                        <!--Seach Area End -->
-                        <!--Contact info Start -->
-                        <div class="contact-link" style="margin-left: 16px">
-                            <div class="phone">
-                                <p>اشتراک گزاری</p>
-                                <a href="javascript:void(0)"onclick="sharePage('@Request.Url.AbsoluteUri')"  class="d-block text-center"><i class="fas fa-share"></i></a>
-
-                            </div>
-                        </div>
-                        <div class="contact-link">
-                            <div class="phone">
-                                <p>با ما تماس بگیرید:</p>
-                                <a href="tel:@ViewBag.Phone" class="d-block text-center">@ViewBag.Phone</a>
-
-                            </div>
-                        </div>
-                        <!--Contact info End -->
-                        <!--Cart info Start -->
-                        <!--Cart info End -->
-                    </div>
-                </div>
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <img class="main_logo"
+                         src="~/Content/client/wp-content/themes/uniqo/img/logo.png"
+                         alt="زینو جم">
+                </a>
             </div>
-            <!-- mobile menu -->
-            <div class="mobile-menu-area">
-                <div class="mobile-menu">
-                    <nav id="mobile-menu-active" style="display: block;">
-                        <ul class="menu-overflow">
-                            <li>
-                                <a href="/">صفحه اصلی</a>
-                            </li>
-                            <li><a href="/Gallery">گالری</a></li>
-                            <li><a href="/AboutUs">درباره ما</a></li>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="menu-main_menu-container">
+                    <ul id="menu-main_menu" class="nav navbar-nav" itemscope
+                        itemtype="#">
 
-                            <li>
-                                <a href="/Blog">بلاگ</a>
-                            </li>
-                            <li><a href="/ContactUs">تماس با ما</a></li>
-                            <li><a href="/OurTeam">مدیران</a></li>
-                            <li><a href="/Certificates">گواهینامه ها</a></li>
-                            <li><a href="/Foods">غذا ها</a></li>
-                        </ul>
-                    </nav>
+
+                        <li id="menu-item-1750"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1750 nav-item">
+                            <a itemprop="url" href="/home/contactUsForm" class="nav-link"><span itemprop="name">تماس با ما</span></a>
+                        </li>
+                        <li id="menu-item-662"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-662 nav-item">
+                            <a itemprop="url" href="/home/about" class="nav-link"><span itemprop="name">درباره ما</span></a>
+                        </li>
+                        <li id="menu-item-663"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-663 nav-item">
+                            <a itemprop="url" href="/blog" class="nav-link"><span itemprop="name">بلاگ</span></a>
+                        </li>
+                        <li id="menu-item-660"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children dropdown menu-item-660 nav-item">
+                            <a href="/home/Products" data-toggle="" aria-haspopup="true" aria-expanded="false"
+                               class="dropdown-toggle nav-link" id="menu-item-dropdown-660"><span itemprop="name">محصولات</span></a>
+                            <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-660">
+                                @foreach (var category in Model.ProductCategories)
+                                {
+                                    <li id="menu-item-@category.Id"
+                                        class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children dropdown menu-item-@category.Id nav-item">
+                                        <a itemprop="url"
+                                           href="/home/products/@category.Id"
+                                           class="dropdown-item" aria-haspopup="true" aria-expanded="false">
+                                            <span itemprop="name">@category.Title</span>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-660">
+                                            @foreach (var product in category.Products)
+                                            {
+
+                                                <li id="menu-item-@product.Id"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-product menu-item-@product.Id nav-item">
+                                                    <a itemprop="url"
+                                                       href="~/home/products/@category.Id"
+                                                       class="dropdown-item">
+                                                        <span itemprop="name">@product.Title</span>
+                                                    </a>
+                                                </li>
+                                                @*<li id="menu-item-2224"
+                                            class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2224 nav-item">
+                                            <a itemprop="url"
+                                               href="~/home/products"
+                                               class="dropdown-item">
+                                                <span itemprop="name">ماسک</span>
+                                            </a>
+                                        </li>*@
+
+                                            }
+                                        </ul>
+                                    </li>
+                                }
+
+                                @*<li id="menu-item-2223"
+                            class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children dropdown menu-item-2223 nav-item">
+                            <a itemprop="url"
+                               href="~/home/products"
+                               class="dropdown-item" aria-haspopup="true" aria-expanded="false">
+                                <span itemprop="name">ماسک</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-660">
+                                <li id="menu-item-2231"
+                                    class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2231 nav-item">
+                                    <a itemprop="url"
+                                       href="~/home/products"
+                                       class="dropdown-item"><span itemprop="name">ماسک</span></a>
+                                </li>
+                                <li id="menu-item-2224"
+                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2224 nav-item">
+                                    <a itemprop="url"
+                                       href="~/home/products"
+                                       class="dropdown-item">
+                                        <span itemprop="name">ماسک</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-2225"
+                            class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children dropdown menu-item-2225 nav-item">
+                            <a itemprop="url"
+                               href="~/home/products"
+                               class="dropdown-item" aria-haspopup="true" aria-expanded="false">
+                                <span itemprop="name">دستکش</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-660">
+                                <li id="menu-item-2227"
+                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2227 nav-item">
+                                    <a itemprop="url"
+                                       href="~/home/products"
+                                       class="dropdown-item"><span itemprop="name">دستکش</span></a>
+                                </li>
+                                <li id="menu-item-2226"
+                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2226 nav-item">
+                                    <a itemprop="url"
+                                       href="~/home/products"
+                                       class="dropdown-item"><span itemprop="name">دستکش</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-2228"
+                            class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-has-children dropdown menu-item-2228 nav-item">
+                            <a itemprop="url"
+                               href="~/home/products"
+                               class="dropdown-item" aria-haspopup="true" aria-expanded="false">
+                                <span itemprop="name">ماسک</span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="menu-item-dropdown-660">
+                                <li id="menu-item-2230"
+                                    class="menu-item menu-item-type-post_type menu-item-object-product menu-item-2230 nav-item">
+                                    <a itemprop="url"
+                                       href="~/home/products"
+                                       class="dropdown-item">
+                                        <span itemprop="name">ماسک</span>
+                                    </a>
+                                </li>
+                                <li id="menu-item-2229"
+                                    class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-2229 nav-item">
+                                    <a itemprop="url"
+                                       href="~/home/products"
+                                       class="dropdown-item">
+                                        <span itemprop="name">ماسک</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>*@
+                            </ul>
+                        </li>
+                        <li id="menu-item-1751"
+                            class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item active menu-item-1751 nav-item">
+                            <a itemprop="url" href="/" class="nav-link" aria-current="page">
+                                <span itemprop="name">خانه</span>
+                            </a>
+                            @*@Html.ActionLink("خانه","Index","Home",new { @class="nav-link",@itemprop=""})*@
+                        </li>
+                    </ul>
                 </div>
-            </div>
-            <!-- mobile menu end-->
-        </div>
-    </div>
-</header>
-<!--Alert Modal -->
-<script>
-    function message(msg) {
-        if (Notification) {
-            if (Notification.permission === "granted") {
-                var notification = new Notification("آدرس با موفقیت کپی شد", { body: msg });
-                setTimeout(function() {notification.close()}, 3000);
-            } else { Notification.requestPermission(); }
-        }
-        else { alert(msg);}
-    }
-    function sharePage(copyText) {
-        document.execCommand("copy");
-        message(copyText);
-        //var notification = new Notification("آدرس با موفقیت کپی شد", { body: copyText });
-        //setTimeout(function() {notification.close()}, 3000);
-    }
-</script>
+                <!-- <a class="language_icon insta_btn" style="opacity: 1;"  href="https://www.instagram.com/homeplusclub/">به اینستاگرام ما بپیوندید</a> -->
+
+                @using (Html.BeginForm("" ,"Blog", FormMethod.Get, new { @class = "hp-search-form ", role = "search", id = "hp-search-form" }))
+                {
+                    <div id="search_form_group" class="form-group">
+                        <input type="submit" class="hp-search_btn" value=" " id="search_icon" />
+                        <input type="search" id="search_text" class="hp-search-input form-control"
+                               placeholder="جستجو ..." value="" name="searchString" />
+                    </div>
+                }
+
+                @*<form role="search" method="get" id="hp-search-form" class="hp-search-form "
+                      action="#">
+                    <div id="search_form_group" class="form-group">
+                        <input type="submit" class="hp-search_btn" value=" " id="search_icon" />
+                        <input type="search" id="search_text" class="hp-search-input form-control"
+                               placeholder="جستجو ..." value="" name="s" />
+                    </div>
+                </form>*@
+
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>

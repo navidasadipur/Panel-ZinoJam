@@ -1,0 +1,57 @@
+﻿@model SpadCompanyPanel.Web.ViewModels.ProductViewModel
+@{
+    ViewBag.Title = "محصولات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var productCount = 1;
+}
+
+<style>
+    .products {
+        font-family: BNazanin;
+    }
+</style>
+
+
+<div id="parent-page" class="parent-page">
+    <div class="container rtl">
+
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/home/products">محصولات</a></li>
+                @*<li class="breadcrumb-item"><a href="#">دستکش</a></li>*@
+                @if (ViewBag.CategoryTitle != null)
+                {
+                    <li class="breadcrumb-item active" aria-current="page">@ViewBag.CategoryTitle</li>
+                }
+            </ol>
+        </nav>
+        @*@if (ViewBag.CategoryTitle != null)
+            {
+                <h1 class="page-title">@ViewBag.CategoryTitle</h1>
+            }*@
+        @foreach (var category in Model.ProductCategories)
+        {
+            <div class="row">
+
+                <h1 class="page-title">@category.Title</h1>
+                @foreach (var product in category.Products)
+                {
+                    <div class="col-md-4 col-xs-12">
+                        <div class="products">
+                            <img src="~/Files/ProductImages/@product.Image" alt="@product.Title">
+                            <h2 class="product-title">
+                                @product.Title
+                            </h2>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+
+</div>
+
+

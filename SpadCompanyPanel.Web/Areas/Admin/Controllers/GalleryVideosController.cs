@@ -49,7 +49,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                     GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
 
                     // Resizing Image
-                    ImageResizer imageCut = new ImageResizer(1200, 1200, true);
+                    ImageResizer imageCut = new ImageResizer(2300, 1800, true);
 
                     imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
                         Server.MapPath("/Files/GalleryImages/" + newFileName));
@@ -108,7 +108,7 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                     GalleryImage.SaveAs(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName));
 
                     // Resizing Image
-                    ImageResizer imageCut = new ImageResizer(1200, 1200, true);
+                    ImageResizer imageCut = new ImageResizer(2300, 1800, true);
 
                     imageCut.Resize(Server.MapPath("/Files/GalleryImages/Temp/" + newFileName),
                         Server.MapPath("/Files/GalleryImages/" + newFileName));

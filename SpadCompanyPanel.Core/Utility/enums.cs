@@ -10,7 +10,8 @@ namespace SpadCompanyPanel.Core.Utility
     {
         Slider = 1001,
         CompanyHistory = 2,
-        BlogImage = 1004
+        BlogImage = 1004,
+        FirstPageDetails = 1005
     }
     public enum StaticContents
     {
@@ -24,6 +25,8 @@ namespace SpadCompanyPanel.Core.Utility
         Pinterest = 1012,
         Facebook = 1010,
         BlogImage = 1013,
-        ContactInfo = 1014
+        ContactInfo = 1014,
+        SupportPhone = 2014,
+        About = 1006
     }
 }

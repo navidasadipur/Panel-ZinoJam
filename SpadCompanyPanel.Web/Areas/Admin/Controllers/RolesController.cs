@@ -11,13 +11,21 @@ using Kendo.Mvc.UI;
 using SpadCompanyPanel.Web.ViewModels;
 using SpadCompanyPanel.Core.Models;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SpadCompanyPanel.Infrastructure.Repositories;
 
 namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
 {
     [Authorize]
     public class RolesController : Controller
     {
+        private readonly LogsRepository _logsRepository;
+
         private MyDbContext db = new MyDbContext();
+
+        public RolesController(LogsRepository logsRepository)
+        {
+            this._logsRepository = logsRepository;
+        }
 
         // GET: Admin/Roles
         public ActionResult Index()
@@ -208,7 +216,26 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             Role roles = db.Role.Find(id);
+
+            var currentUserRoles = _logsRepository.GetCurrentUser().Roles;
+
+            foreach (var role in currentUserRoles)
+            {
+                if ( role.RoleId == id)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                }
+            }
+
             db.Roles.Remove(roles);
+
+            List<RolePermission> rolePermissions = db.RolePermissions.Where(rp => rp.Role.Id == id).ToList();
+
+            foreach (var item in rolePermissions)
+            {
+                db.RolePermissions.Remove(item);
+            }
+
             db.SaveChanges();
             return RedirectToAction("Index");
         }
