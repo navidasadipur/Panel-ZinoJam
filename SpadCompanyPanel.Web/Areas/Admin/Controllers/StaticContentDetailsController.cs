@@ -59,6 +59,36 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                         image = new ImageResizer(1000, 1000, true);
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.FirstPageDetails)
                         image = new ImageResizer(2400, 2000, true);
+                    //if (staticContentDetail.Id == 3024 || staticContentDetail.Id == 3036 || staticContentDetail.Id == 3041)
+                    //    image = new ImageResizer(1200, 900, true);
+                    //if (staticContentDetail.Id == 3024 || staticContentDetail.Id == 3036 || staticContentDetail.Id == 3041)
+                    //    image = new ImageResizer(1200, 900, true);
+                    //if (staticContentDetail.Id == 3029 || staticContentDetail.Id == 3037 || staticContentDetail.Id == 3042)
+                    //    image = new ImageResizer(700, 700, true);
+                    //if (staticContentDetail.Id == 3031 || staticContentDetail.Id == 3038 || staticContentDetail.Id == 3043)
+                    //    image = new ImageResizer(1000, 1000, true);
+
+
+                    if (staticContentDetail.Id == 3024)
+                        image = new ImageResizer(1500, 820, true);
+                    if (staticContentDetail.Id == 3029)
+                        image = new ImageResizer(2100, 1700, true);
+                    if (staticContentDetail.Id == 3031)
+                        image = new ImageResizer(2200, 1700, true);
+
+                    if (staticContentDetail.Id == 3036)
+                        image = new ImageResizer(1500, 820, true);
+                    if (staticContentDetail.Id == 3037)
+                        image = new ImageResizer(2200, 1600, true);
+                    if (staticContentDetail.Id == 3038)
+                        image = new ImageResizer(2200, 2500, true);
+
+                    if (staticContentDetail.Id == 3041)
+                        image = new ImageResizer(1500, 820, true);
+                    if (staticContentDetail.Id == 3042)
+                        image = new ImageResizer(2000, 2500, true);
+                    if (staticContentDetail.Id == 3043)
+                        image = new ImageResizer(2500, 1500, true);
 
                     image.Resize(Server.MapPath("/Files/StaticContentImages/Temp/" + newFileName),
                         Server.MapPath("/Files/StaticContentImages/Image/" + newFileName));
@@ -117,6 +147,27 @@ namespace SpadCompanyPanel.Web.Areas.Admin.Controllers
                         image = new ImageResizer(1000, 1000, true);
                     if (staticContentDetail.StaticContentTypeId == (int)StaticContentTypes.FirstPageDetails)
                         image = new ImageResizer(2400, 2000, true);
+
+                    if (staticContentDetail.Id == 3024) 
+                        image = new ImageResizer(1500, 820, true);
+                    if (staticContentDetail.Id == 3029)
+                        image = new ImageResizer(2100, 1700, true);
+                    if (staticContentDetail.Id == 3031)
+                        image = new ImageResizer(2200, 1700, true);
+
+                    if (staticContentDetail.Id == 3036)
+                        image = new ImageResizer(1500, 820, true);
+                    if (staticContentDetail.Id == 3037)
+                        image = new ImageResizer(2200, 1600, true);
+                    if (staticContentDetail.Id == 3038)
+                        image = new ImageResizer(2200, 2500, true);
+
+                    if (staticContentDetail.Id == 3041)
+                        image = new ImageResizer(1500, 820, true);
+                    if (staticContentDetail.Id == 3042)
+                        image = new ImageResizer(2000, 2500, true);
+                    if (staticContentDetail.Id == 3043)
+                        image = new ImageResizer(2500, 1500, true);
 
                     image.Resize(Server.MapPath("/Files/StaticContentImages/Temp/" + newFileName),
                         Server.MapPath("/Files/StaticContentImages/Image/" + newFileName));
